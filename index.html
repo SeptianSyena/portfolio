@@ -121,14 +121,18 @@
 </head>
 <body class="bg-obsidian text-slate-100 antialiased selection:bg-cyan-500 selection:text-slate-950">
 
-    <!-- Mengganti panel terminal dengan foto profil log 1 dan border yang rapi -->
-<div class="bg-obsidian border border-cyan-500/30 rounded-2xl p-4 shadow-2xl relative overflow-hidden group">
-    <div class="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-emerald-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-    <div class="relative rounded-xl overflow-hidden aspect-[4/5] bg-slate-900 flex items-center justify-center">
-        <!-- Pastikan file foto Anda bernama log 1.jpg (atau sesuaikan dengan nama file aslinya di folder images) -->
-        <img src="images/log 1.jpg" alt="Septian Syena Firmansyah" class="w-full h-full object-cover rounded-xl transition duration-500 group-hover:scale-105">
+    <!-- Toast Notification for Clipboard Copy & Form Feedback -->
+    <div id="toast-notification" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="bg-slate-900 border border-cyan-500/60 text-slate-100 px-5 py-3.5 rounded-xl shadow-2xl flex items-center space-x-3 glow-cyan">
+            <div class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center">
+                <i id="toast-icon" class="fa-solid fa-check"></i>
+            </div>
+            <div>
+                <p id="toast-title" class="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider">System Notification</p>
+                <p id="toast-message" class="text-sm text-slate-200 font-medium">Copied to clipboard</p>
+            </div>
+        </div>
     </div>
-</div>
 
     <!-- Navigation Bar -->
     <header class="fixed top-0 left-0 right-0 z-40 bg-obsidian/85 backdrop-blur-md border-b border-slate-800/80">
