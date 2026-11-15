@@ -1,0 +1,1714 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Septian Syena Firmansyah | Asia Systems Engineer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: '#06090f',
+                        slate: {
+                            850: '#131c2e',
+                            900: '#0d1422',
+                            950: '#070b14',
+                        },
+                        cyan: {
+                            400: '#22d3ee',
+                            500: '#06b6d4',
+                        },
+                        emerald: {
+                            400: '#34d399',
+                            500: '#10b981',
+                        },
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #06090f;
+            color: #f1f5f9;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #06090f;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155;
+        }
+        .control-grid {
+            background-image: 
+                linear-gradient(to right, rgba(34, 211, 238, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(34, 211, 238, 0.04) 1px, transparent 1px);
+            background-size: 3rem 3rem;
+        }
+        .glow-cyan {
+            box-shadow: 0 0 30px rgba(6, 182, 212, 0.12);
+        }
+        .glow-emerald {
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.12);
+        }
+        .glow-amber {
+            box-shadow: 0 0 30px rgba(245, 158, 11, 0.12);
+        }
+    </style>
+</head>
+<body class="bg-obsidian text-slate-100 antialiased selection:bg-cyan-500 selection:text-slate-950">
+
+    <!-- Toast Notification for Clipboard Copy & Form Feedback -->
+    <div id="toast-notification" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="bg-slate-900 border border-cyan-500/60 text-slate-100 px-5 py-3.5 rounded-xl shadow-2xl flex items-center space-x-3 glow-cyan">
+            <div class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center">
+                <i id="toast-icon" class="fa-solid fa-check"></i>
+            </div>
+            <div>
+                <p id="toast-title" class="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider">System Notification</p>
+                <p id="toast-message" class="text-sm text-slate-200 font-medium">Copied to clipboard</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-40 bg-obsidian/85 backdrop-blur-md border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#hero" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-emerald-500 flex items-center justify-center text-slate-950 font-mono font-extrabold text-base shadow-lg shadow-cyan-500/20 group-hover:scale-105 transition-transform">
+                    SSF
+                </div>
+                <div>
+                    <span class="block font-bold text-base tracking-tight text-white group-hover:text-cyan-400 transition-colors">Septian Syena F.</span>
+                    <span class="block text-xs font-mono text-cyan-400/90">ASIA SYSTEMS ENGINEER</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center space-x-7 text-sm font-medium text-slate-300">
+                <a href="#experience" class="hover:text-cyan-400 transition-colors">Experience</a>
+                <a href="#projects" class="hover:text-cyan-400 transition-colors">Projects</a>
+                <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills & Certs</a>
+                <a href="#education" class="hover:text-cyan-400 transition-colors">Education & Leadership</a>
+                <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+            </nav>
+
+            <!-- CTA Header Button -->
+            <div class="hidden md:flex items-center space-x-3">
+                <button onclick="copyToClipboard('septiansyena789@gmail.com', 'Email Address')" class="px-3.5 py-2 rounded-lg text-xs font-mono text-slate-300 bg-slate-900 border border-slate-700 hover:border-cyan-500/60 hover:text-cyan-400 transition-all flex items-center space-x-2" title="Copy Email">
+                    <i class="fa-regular fa-copy text-cyan-400"></i>
+                    <span>septiansyena789@gmail.com</span>
+                </button>
+                <a href="#contact" class="px-4 py-2 rounded-lg text-xs font-mono font-bold uppercase tracking-wider text-slate-950 bg-gradient-to-r from-cyan-400 to-emerald-400 hover:from-cyan-300 hover:to-emerald-300 transition-all shadow-lg shadow-cyan-500/20">
+                    Connect
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="lg:hidden text-slate-300 hover:text-white p-2 focus:outline-none" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-slate-900 border-b border-slate-800 px-6 py-4 space-y-3">
+            <a href="#experience" class="block text-slate-300 hover:text-cyan-400 py-2 font-medium">Professional Experience</a>
+            <a href="#projects" class="block text-slate-300 hover:text-cyan-400 py-2 font-medium">Engineering Projects</a>
+            <a href="#skills" class="block text-slate-300 hover:text-cyan-400 py-2 font-medium">Technical Stack & Certifications</a>
+            <a href="#education" class="block text-slate-300 hover:text-cyan-400 py-2 font-medium">Education & Leadership</a>
+            <a href="#contact" class="block text-slate-300 hover:text-cyan-400 py-2 font-medium">Contact & Direct Links</a>
+            <div class="pt-2 flex flex-col space-y-2">
+                <button onclick="copyToClipboard('septiansyena789@gmail.com', 'Email Address')" class="w-full py-2.5 rounded-lg text-xs font-mono text-cyan-400 bg-slate-950 border border-slate-800">
+                    <i class="fa-regular fa-copy mr-1.5"></i> Copy Email: septiansyena789@gmail.com
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 1. HERO SECTION -->
+    <section id="hero" class="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden control-grid">
+        <!-- Ambient Radial Glows -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Column: Identity & Summary -->
+                <div class="lg:col-span-7 space-y-6">
+                    <!-- Live Status Badge -->
+                    <div class="inline-flex items-center space-x-2.5 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-emerald-500/40 text-xs font-mono font-semibold text-emerald-400 glow-emerald">
+                        <span class="relative flex h-2.5 w-2.5">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                        </span>
+                        <span>SYSTEM ONLINE // AVAILABLE FOR COLLABORATION</span>
+                    </div>
+
+                    <div>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                            Septian Syena <span class="bg-gradient-to-r from-cyan-400 via-emerald-400 to-cyan-300 bg-clip-text text-transparent">Firmansyah</span>
+                        </h1>
+                        <p class="text-lg sm:text-xl font-mono font-semibold text-amber-400 mt-3 flex items-center flex-wrap gap-2">
+                            <span>Asia Systems Engineer at RoviSys Asia Indonesia</span>
+                        </p>
+                    </div>
+
+                    <p class="text-base text-slate-300 leading-relaxed max-w-2xl">
+                        Asia Systems Engineer at <span class="text-white font-semibold">RoviSys Asia Indonesia</span> specializing in industrial automation, DCS/PLC/SCADA systems, system migration, data center infrastructure control, and field instrumentation calibration & maintenance across energy, chemical, and technology sectors.
+                    </p>
+
+                    <!-- Quick Contact Chips -->
+                    <div class="flex flex-wrap gap-2.5 pt-1 text-xs font-mono">
+                        <button onclick="copyToClipboard('septiansyena789@gmail.com', 'Email')" class="inline-flex items-center space-x-2 px-3 py-2 rounded-lg bg-slate-900 border border-slate-800 hover:border-cyan-500/50 text-slate-300 hover:text-cyan-400 transition-colors">
+                            <i class="fa-regular fa-envelope text-cyan-400"></i>
+                            <span>septiansyena789@gmail.com</span>
+                            <i class="fa-regular fa-copy text-slate-500"></i>
+                        </button>
+                        <button onclick="copyToClipboard('+62 858-4378-7499', 'Phone Number')" class="inline-flex items-center space-x-2 px-3 py-2 rounded-lg bg-slate-900 border border-slate-800 hover:border-emerald-500/50 text-slate-300 hover:text-emerald-400 transition-colors">
+                            <i class="fa-solid fa-phone text-emerald-400"></i>
+                            <span>(+62) 858-4378-7499</span>
+                            <i class="fa-regular fa-copy text-slate-500"></i>
+                        </button>
+                        <a href="https://www.linkedin.com/in/septiansyenafirmansyah" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 px-3 py-2 rounded-lg bg-slate-900 border border-slate-800 hover:border-cyan-500/50 text-slate-300 hover:text-cyan-400 transition-colors">
+                            <i class="fa-brands fa-linkedin text-cyan-400"></i>
+                            <span>linkedin.com/in/septiansyenafirmansyah</span>
+                        </a>
+                        <div class="inline-flex items-center space-x-2 px-3 py-2 rounded-lg bg-slate-900/60 border border-slate-800/80 text-slate-400">
+                            <i class="fa-solid fa-location-dot text-amber-400"></i>
+                            <span>Jakarta / Mojokerto, Indonesia</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+                        <a href="#experience" class="px-7 py-3.5 rounded-xl font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 to-emerald-400 hover:from-cyan-300 hover:to-emerald-300 transition-all shadow-lg shadow-cyan-500/20 flex items-center justify-center space-x-2">
+                            <span>Explore Experience</span>
+                            <i class="fa-solid fa-arrow-down text-sm"></i>
+                        </a>
+                        <a href="#projects" class="px-7 py-3.5 rounded-xl font-semibold text-white bg-slate-900 border border-slate-700 hover:bg-slate-800 hover:border-cyan-500/50 transition-all flex items-center justify-center space-x-2">
+                            <i class="fa-solid fa-microchip text-cyan-400"></i>
+                            <span>View Engineering Projects</span>
+                        </a>
+                    </div>
+
+                    <!-- Key Metrics Strip -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-slate-800/80">
+                        <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-4">
+                            <span class="block text-2xl font-mono font-bold text-cyan-400">Cum Laude</span>
+                            <span class="text-xs text-slate-400 font-medium">B.A.S. Graduate • UGM</span>
+                        </div>
+                        <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-4">
+                            <span class="block text-2xl font-mono font-bold text-emerald-400">4+ Plants</span>
+                            <span class="text-xs text-slate-400 font-medium">Industrial Internships</span>
+                        </div>
+                        <div class="bg-slate-900/80 border border-slate-800 rounded-xl p-4">
+                            <span class="block text-2xl font-mono font-bold text-amber-400">DCS/PLC/SCADA</span>
+                            <span class="text-xs text-slate-400 font-medium">Automation Specialist</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Industrial Control Room Telemetry Card -->
+                <div class="lg:col-span-5">
+                    <div class="rounded-2xl bg-slate-900 border border-slate-800 p-6 shadow-2xl glow-cyan relative overflow-hidden">
+                        <!-- Top Terminal Bar -->
+                        <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                            <div class="flex items-center space-x-2">
+                                <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                                <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+                                <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+                                <span class="text-xs font-mono text-slate-500 ml-2">SYS_DIAGNOSTICS.EXE</span>
+                            </div>
+                            <span class="text-[11px] font-mono text-emerald-400 bg-emerald-950/80 px-2.5 py-0.5 rounded border border-emerald-700/50">RUN_MODE</span>
+                        </div>
+
+                        <!-- Telemetry Parameters -->
+                        <div class="space-y-3.5 pt-5 font-mono text-xs">
+                            <div class="p-3.5 bg-slate-950 rounded-xl border border-slate-800/90 flex items-center justify-between">
+                                <span class="text-slate-400">CURRENT_ROLE</span>
+                                <span class="text-cyan-400 font-semibold">Asia Systems Engineer</span>
+                            </div>
+                            <div class="p-3.5 bg-slate-950 rounded-xl border border-slate-800/90 flex items-center justify-between">
+                                <span class="text-slate-400">ORGANIZATION</span>
+                                <span class="text-white font-semibold">RoviSys Asia Indonesia</span>
+                            </div>
+                            <div class="p-3.5 bg-slate-950 rounded-xl border border-slate-800/90 flex items-center justify-between">
+                                <span class="text-slate-400">CORE_PLATFORMS</span>
+                                <span class="text-amber-400 font-semibold">Experion PKS / Rockwell / Foxboro</span>
+                            </div>
+                            <div class="p-3.5 bg-slate-950 rounded-xl border border-slate-800/90 flex items-center justify-between">
+                                <span class="text-slate-400">SECTORS</span>
+                                <span class="text-emerald-400 font-semibold">Energy • Chemical • Data Center</span>
+                            </div>
+
+                            <!-- Simulated Loop Check Bars -->
+                            <div class="p-4 bg-slate-950 rounded-xl border border-slate-800/90 space-y-3">
+                                <div class="flex items-center justify-between text-[11px]">
+                                    <span class="text-slate-400">DCS MIGRATION & HMI LOGIC</span>
+                                    <span class="text-cyan-400 font-bold">100% VERIFIED</span>
+                                </div>
+                                <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                                    <div class="bg-cyan-400 h-full w-full rounded-full"></div>
+                                </div>
+
+                                <div class="flex items-center justify-between text-[11px] pt-1">
+                                    <span class="text-slate-400">FIELD INSTRUMENT CALIBRATION</span>
+                                    <span class="text-emerald-400 font-bold">HART / AMS TREX / FLUKE</span>
+                                </div>
+                                <div class="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                                    <div class="bg-emerald-400 h-full w-full rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Status Footer -->
+                        <div class="mt-5 pt-4 border-t border-slate-800 flex items-center justify-between text-[11px] font-mono text-slate-400">
+                            <span><i class="fa-solid fa-shield-halved text-amber-400 mr-1.5"></i>IWCF Level 1 & KCCI Certified</span>
+                            <span class="text-cyan-400">IDN // JKT-MJK</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. PROFESSIONAL EXPERIENCE SECTION -->
+    <section id="experience" class="py-24 bg-slate-950 border-t border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-cyan-400">01 // Career Trajectory</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">Professional Experience</h2>
+                    <p class="text-slate-400 mt-2 max-w-2xl">End-to-end control system engineering, DCS migrations, academic instruction, and field instrumentation across major industrial facilities.</p>
+                </div>
+
+                <!-- Interactive Filter Buttons -->
+                <div class="flex flex-wrap gap-2" id="exp-filters">
+                    <button data-filter="all" class="exp-filter-btn active px-4 py-2 rounded-lg text-xs font-mono font-semibold bg-cyan-500 text-slate-950 transition-all">
+                        All Roles (6)
+                    </button>
+                    <button data-filter="fulltime" class="exp-filter-btn px-4 py-2 rounded-lg text-xs font-mono font-semibold bg-slate-900 text-slate-300 border border-slate-800 hover:border-cyan-500/50 transition-all">
+                        Full-Time & Academic
+                    </button>
+                    <button data-filter="internship" class="exp-filter-btn px-4 py-2 rounded-lg text-xs font-mono font-semibold bg-slate-900 text-slate-300 border border-slate-800 hover:border-cyan-500/50 transition-all">
+                        Industrial Internships
+                    </button>
+                    <button id="toggle-photo-edit-btn" onclick="togglePhotoEditMode()" class="px-4 py-2 rounded-lg text-xs font-mono font-semibold bg-slate-900 text-amber-400 border border-amber-500/40 hover:bg-amber-500/10 transition-all flex items-center space-x-1.5" title="Test ganti foto dokumentasi dari perangkat Anda">
+                        <i class="fa-solid fa-camera-rotate"></i>
+                        <span id="photo-edit-label">Mode Edit Foto: OFF</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Timeline Container -->
+            <div class="relative border-l-2 border-slate-800 ml-3 sm:ml-6 space-y-8" id="experience-list">
+                
+                <!-- Role 1: RoviSys Asia Indonesia -->
+                <div class="exp-item relative pl-8 sm:pl-10" data-category="fulltime">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-cyan-400 ring-4 ring-slate-950"></span>
+                    <div class="bg-slate-900 border border-slate-800 hover:border-cyan-500/50 rounded-2xl p-6 sm:p-8 transition-all">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                            <div>
+                                <div class="flex items-center flex-wrap gap-2">
+                                    <h3 class="text-xl font-bold text-white">Asia Systems Engineer</h3>
+                                    <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-cyan-500/15 text-cyan-400 border border-cyan-500/30">FULL-TIME</span>
+                                </div>
+                                <p class="text-base font-semibold text-emerald-400 mt-1">RoviSys Asia Indonesia</p>
+                            </div>
+                            <div class="text-left sm:text-right font-mono text-xs text-slate-400 space-y-1">
+                                <span class="block text-amber-400 font-semibold">Oct 2026 – Present</span>
+                                <span class="block"><i class="fa-solid fa-location-dot mr-1"></i>Jakarta, Indonesia</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-2.5 text-sm text-slate-300 list-disc list-inside marker:text-cyan-400">
+                            <li>Executed the end-to-end reprogramming and migration of the Distributed Control System (DCS) from <span class="text-white font-medium">Honeywell Experion PKS</span> to <span class="text-white font-medium">Rockwell Automation</span> platforms across both upstream and downstream production areas at Lonza.</li>
+                            <li>Designed, built, and tested HMI displays migrated from Honeywell HMI Web Display Builder to Rockwell platforms using <span class="text-cyan-400 font-mono text-xs">FactoryTalk View</span> and <span class="text-cyan-400 font-mono text-xs">Studio 5000</span> to ensure accurate interface functionality for Lonza's operations.</li>
+                            <li>Configured new logic coding and HMI graphics while performing direct program troubleshooting to deliver a seamless system transition at Lonza.</li>
+                        </ul>
+
+                        <!-- Dokumentasi Kegiatan: RoviSys Asia Indonesia -->
+                        <!-- PANDUAN GITHUB: Ganti data-doc-type / tambahkan tag <img src="assets/nama-foto.jpg" class="w-full h-full object-cover"> pada masing-masing slot di bawah -->
+                        <div class="mt-6 pt-5 border-t border-slate-800/80">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider flex items-center space-x-2">
+                                    <i class="fa-solid fa-images"></i>
+                                    <span>Dokumentasi Kegiatan // Engineering Logs</span>
+                                </span>
+                                <span class="text-[11px] font-mono text-slate-500">Klik foto untuk memperbesar</span>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+                                <!-- Slot Foto 1 -->
+                                <div class="doc-card group relative rounded-xl bg-slate-950 border border-slate-800 hover:border-cyan-400/60 overflow-hidden cursor-pointer transition-all"
+                                     data-role="RoviSys Asia Indonesia — Asia Systems Engineer"
+                                     data-title="DCS Migration: Experion PKS to Rockwell"
+                                     data-desc="Reprogramming & logic conversion across upstream and downstream production units at Lonza using Studio 5000."
+                                     onclick="openLightbox(this)">
+                                    <div class="aspect-video w-full relative overflow-hidden bg-slate-950">
+                                        <!-- GANTI src DENGAN FILE FOTO ANDA (contoh: assets/rovisys-1.jpg) -->
+                                        <img src="" alt="DCS Migration" class="doc-img hidden w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <div class="doc-placeholder w-full h-full"></div>
+                                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80"></div>
+                                        <span class="absolute bottom-2 left-2.5 right-2.5 text-[11px] font-mono font-semibold text-white truncate">DCS Migration (Studio 5000)</span>
+                                        <span class="absolute top-2 right-2 w-6 h-6 rounded-md bg-slate-900/80 text-cyan-400 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <i class="fa-solid fa-expand"></i>
+                                        </span>
+                                    </div>
+                                    <label class="photo-upload-overlay hidden absolute inset-0 bg-slate-950/85 backdrop-blur-xs flex flex-col items-center justify-center text-amber-400 text-xs font-mono cursor-pointer z-10" onclick="event.stopPropagation()">
+                                        <i class="fa-solid fa-upload text-lg mb-1"></i>
+                                        <span>Ganti Foto Lokal</span>
+                                        <input type="file" accept="image/*" class="hidden" onchange="previewLocalPhoto(event, this)">
+                                    </label>
+                                </div>
+
+                                <!-- Slot Foto 2 -->
+                                <div class="doc-card group relative rounded-xl bg-slate-950 border border-slate-800 hover:border-cyan-400/60 overflow-hidden cursor-pointer transition-all"
+                                     data-role="RoviSys Asia Indonesia — Asia Systems Engineer"
+                                     data-title="HMI Graphics Development (FactoryTalk View)"
+                                     data-desc="Migrating Honeywell HMI Web Display Builder screens into interactive FactoryTalk View operator graphics."
+                                     onclick="openLightbox(this)">
+                                    <div class="aspect-video w-full relative overflow-hidden bg-slate-950">
+                                        <!-- GANTI src DENGAN FILE FOTO ANDA (contoh: assets/rovisys-2.jpg) -->
+                                        <img src="" alt="HMI Graphics" class="doc-img hidden w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <div class="doc-placeholder w-full h-full"></div>
+                                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80"></div>
+                                        <span class="absolute bottom-2 left-2.5 right-2.5 text-[11px] font-mono font-semibold text-white truncate">FactoryTalk View HMI Build</span>
+                                        <span class="absolute top-2 right-2 w-6 h-6 rounded-md bg-slate-900/80 text-cyan-400 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <i class="fa-solid fa-expand"></i>
+                                        </span>
+                                    </div>
+                                    <label class="photo-upload-overlay hidden absolute inset-0 bg-slate-950/85 backdrop-blur-xs flex flex-col items-center justify-center text-amber-400 text-xs font-mono cursor-pointer z-10" onclick="event.stopPropagation()">
+                                        <i class="fa-solid fa-upload text-lg mb-1"></i>
+                                        <span>Ganti Foto Lokal</span>
+                                        <input type="file" accept="image/*" class="hidden" onchange="previewLocalPhoto(event, this)">
+                                    </label>
+                                </div>
+
+                                <!-- Slot Foto 3 -->
+                                <div class="doc-card group relative rounded-xl bg-slate-950 border border-slate-800 hover:border-cyan-400/60 overflow-hidden cursor-pointer transition-all"
+                                     data-role="RoviSys Asia Indonesia — Asia Systems Engineer"
+                                     data-title="FAT & Logic Troubleshooting"
+                                     data-desc="Direct control logic verification, I/O simulation testing, and commissioning readiness checks."
+                                     onclick="openLightbox(this)">
+                                    <div class="aspect-video w-full relative overflow-hidden bg-slate-950">
+                                        <!-- GANTI src DENGAN FILE FOTO ANDA (contoh: assets/rovisys-3.jpg) -->
+                                        <img src="" alt="FAT Testing" class="doc-img hidden w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <div class="doc-placeholder w-full h-full"></div>
+                                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80"></div>
+                                        <span class="absolute bottom-2 left-2.5 right-2.5 text-[11px] font-mono font-semibold text-white truncate">Control Logic & FAT Testing</span>
+                                        <span class="absolute top-2 right-2 w-6 h-6 rounded-md bg-slate-900/80 text-cyan-400 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <i class="fa-solid fa-expand"></i>
+                                        </span>
+                                    </div>
+                                    <label class="photo-upload-overlay hidden absolute inset-0 bg-slate-950/85 backdrop-blur-xs flex flex-col items-center justify-center text-amber-400 text-xs font-mono cursor-pointer z-10" onclick="event.stopPropagation()">
+                                        <i class="fa-solid fa-upload text-lg mb-1"></i>
+                                        <span>Ganti Foto Lokal</span>
+                                        <input type="file" accept="image/*" class="hidden" onchange="previewLocalPhoto(event, this)">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Role 2: Universitas Gadjah Mada -->
+                <div class="exp-item relative pl-8 sm:pl-10" data-category="fulltime">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-emerald-400 ring-4 ring-slate-950"></span>
+                    <div class="bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-2xl p-6 sm:p-8 transition-all">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                            <div>
+                                <div class="flex items-center flex-wrap gap-2">
+                                    <h3 class="text-xl font-bold text-white">Assistant Lecturer for Sensors & Actuators</h3>
+                                    <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">ACADEMIC</span>
+                                </div>
+                                <p class="text-base font-semibold text-cyan-400 mt-1">Universitas Gadjah Mada</p>
+                            </div>
+                            <div class="text-left sm:text-right font-mono text-xs text-slate-400 space-y-1">
+                                <span class="block text-amber-400 font-semibold">Feb 2026 – Jul 2026</span>
+                                <span class="block"><i class="fa-solid fa-location-dot mr-1"></i>Yogyakarta, Indonesia</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-2.5 text-sm text-slate-300 list-disc list-inside marker:text-emerald-400">
+                            <li>Delivered educational materials on sensor and actuator systems to 2025 Instrumentation and Control Engineering Technology (TRIK) students.</li>
+                            <li>Taught operational principles and working mechanics of pneumatic and hydraulic systems, guiding students in integrating solenoid valves with control circuits.</li>
+                            <li>Instructed students on the utilization of <span class="text-emerald-400 font-mono text-xs">FluidSIM</span> software for advanced pneumatic and hydraulic system simulations.</li>
+                        </ul>
+
+                        <!-- Dokumentasi Kegiatan: Universitas Gadjah Mada -->
+                        <div class="mt-6 pt-5 border-t border-slate-800/80">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider flex items-center space-x-2">
+                                    <i class="fa-solid fa-images"></i>
+                                    <span>Dokumentasi Kegiatan // Lab & Teaching</span>
+                                </span>
+                                <span class="text-[11px] font-mono text-slate-500">Klik foto untuk memperbesar</span>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+                                <div class="doc-card group relative rounded-xl bg-slate-950 border border-slate-800 hover:border-emerald-400/60 overflow-hidden cursor-pointer transition-all"
+                                     data-role="Universitas Gadjah Mada — Assistant Lecturer"
+                                     data-title="Pneumatic & Hydraulic Circuit Lab"
+                                     data-desc="Supervising TRIK 2025 students wiring solenoid valves and electro-pneumatic actuator circuits."
+                                     onclick="openLightbox(this)">
+                                    <div class="aspect-video w-full relative overflow-hidden bg-slate-950">
+                                        <!-- GANTI src DENGAN FILE FOTO ANDA (contoh: assets/ugm-1.jpg) -->
+                                        <img src="" alt="Pneumatic Lab" class="doc-img hidden w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <div class="doc-placeholder w-full h-full"></div>
+                                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80"></div>
+                                        <span class="absolute bottom-2 left-2.5 right-2.5 text-[11px] font-mono font-semibold text-white truncate">Pneumatic & Solenoid Lab</span>
+                                        <span class="absolute top-2 right-2 w-6 h-6 rounded-md bg-slate-900/80 text-emerald-400 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <i class="fa-solid fa-expand"></i>
+                                        </span>
+                                    </div>
+                                    <label class="photo-upload-overlay hidden absolute inset-0 bg-slate-950/85 backdrop-blur-xs flex flex-col items-center justify-center text-amber-400 text-xs font-mono cursor-pointer z-10" onclick="event.stopPropagation()">
+                                        <i class="fa-solid fa-upload text-lg mb-1"></i>
+                                        <span>Ganti Foto Lokal</span>
+                                        <input type="file" accept="image/*" class="hidden" onchange="previewLocalPhoto(event, this)">
+                                    </label>
+                                </div>
+
+                                <div class="doc-card group relative rounded-xl bg-slate-950 border border-slate-800 hover:border-emerald-400/60 overflow-hidden cursor-pointer transition-all"
+                                     data-role="Universitas Gadjah Mada — Assistant Lecturer"
+                                     data-title="FluidSIM Circuit Simulation Session"
+                                     data-desc="Teaching students to design and simulate sequential pneumatic and hydraulic ladder logic using FluidSIM."
+                                     onclick="openLightbox(this)">
+                                    <div class="aspect-video w-full relative overflow-hidden bg-slate-950">
+                                        <!-- GANTI src DENGAN FILE FOTO ANDA (contoh: assets/ugm-2.jpg) -->
+                                        <img src="" alt="FluidSIM Teaching" class="doc-img hidden w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <div class="doc-placeholder w-full h-full"></div>
+                                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80"></div>
+                                        <span class="absolute bottom-2 left-2.5 right-2.5 text-[11px] font-mono font-semibold text-white truncate">FluidSIM Simulation Class</span>
+                                        <span class="absolute top-2 right-2 w-6 h-6 rounded-md bg-slate-900/80 text-emerald-400 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <i class="fa-solid fa-expand"></i>
+                                        </span>
+                                    </div>
+                                    <label class="photo-upload-overlay hidden absolute inset-0 bg-slate-950/85 backdrop-blur-xs flex flex-col items-center justify-center text-amber-400 text-xs font-mono cursor-pointer z-10" onclick="event.stopPropagation()">
+                                        <i class="fa-solid fa-upload text-lg mb-1"></i>
+                                        <span>Ganti Foto Lokal</span>
+                                        <input type="file" accept="image/*" class="hidden" onchange="previewLocalPhoto(event, this)">
+                                    </label>
+                                </div>
+
+                                <div class="doc-card group relative rounded-xl bg-slate-950 border border-slate-800 hover:border-emerald-400/60 overflow-hidden cursor-pointer transition-all"
+                                     data-role="Universitas Gadjah Mada — Assistant Lecturer"
+                                     data-title="Sensor Signal Conditioning Practicum"
+                                     data-desc="Hands-on characterization of industrial proximity, pressure, and temperature transducers."
+                                     onclick="openLightbox(this)">
+                                    <div class="aspect-video w-full relative overflow-hidden bg-slate-950">
+                                        <!-- GANTI src DENGAN FILE FOTO ANDA (contoh: assets/ugm-3.jpg) -->
+                                        <img src="" alt="Sensor Practicum" class="doc-img hidden w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <div class="doc-placeholder w-full h-full"></div>
+                                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80"></div>
+                                        <span class="absolute bottom-2 left-2.5 right-2.5 text-[11px] font-mono font-semibold text-white truncate">Sensor & Transducer Practicum</span>
+                                        <span class="absolute top-2 right-2 w-6 h-6 rounded-md bg-slate-900/80 text-emerald-400 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <i class="fa-solid fa-expand"></i>
+                                        </span>
+                                    </div>
+                                    <label class="photo-upload-overlay hidden absolute inset-0 bg-slate-950/85 backdrop-blur-xs flex flex-col items-center justify-center text-amber-400 text-xs font-mono cursor-pointer z-10" onclick="event.stopPropagation()">
+                                        <i class="fa-solid fa-upload text-lg mb-1"></i>
+                                        <span>Ganti Foto Lokal</span>
+                                        <input type="file" accept="image/*" class="hidden" onchange="previewLocalPhoto(event, this)">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Role 3: PT Borneo Alumina Indonesia -->
+                <div class="exp-item relative pl-8 sm:pl-10" data-category="internship">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-amber-400 ring-4 ring-slate-950"></span>
+                    <div class="bg-slate-900 border border-slate-800 hover:border-amber-500/50 rounded-2xl p-6 sm:p-8 transition-all">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                            <div>
+                                <div class="flex items-center flex-wrap gap-2">
+                                    <h3 class="text-xl font-bold text-white">Maintenance Instrument & Automation Intern</h3>
+                                    <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-amber-500/15 text-amber-400 border border-amber-500/30">INTERNSHIP</span>
+                                </div>
+                                <p class="text-base font-semibold text-cyan-400 mt-1">PT Borneo Alumina Indonesia</p>
+                            </div>
+                            <div class="text-left sm:text-right font-mono text-xs text-slate-400 space-y-1">
+                                <span class="block text-amber-400 font-semibold">Aug 2025 – Jan 2026</span>
+                                <span class="block"><i class="fa-solid fa-location-dot mr-1"></i>Mempawah, West Kalimantan</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-2.5 text-sm text-slate-300 list-disc list-inside marker:text-amber-400">
+                            <li>Executed troubleshooting, repair, calibration, and maintenance of field instrumentation (transmitters, valves, and field instruments) across coal gasification, power, alumina production, and utility plants using <span class="text-amber-300 font-mono text-xs">HART Communicator, AMS Trex, Fluke calibrators, furnace calibrator, and hand pump calibrators</span>.</li>
+                            <li>Performed troubleshooting on <span class="text-white font-medium">Schneider Electric FOXBORO DCS</span> and managed I/O installation on the DCS.</li>
+                            <li>Participated in plant commissioning activities, including closing punch lists and preparing punch list reports.</li>
+                        </ul>
+
+                        <!-- Dokumentasi Kegiatan: PT Borneo Alumina Indonesia -->
+                        <div class="mt-6 pt-5 border-t border-slate-800/80">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider flex items-center space-x-2">
+                                    <i class="fa-solid fa-images"></i>
+                                    <span>Dokumentasi Kegiatan // Field & DCS Commissioning</span>
+                                </span>
+                                <span class="text-[11px] font-mono text-slate-500">Klik foto untuk memperbesar</span>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+                                <div class="doc-card group relative rounded-xl bg-slate-950 border border-slate-800 hover:border-amber-400/60 overflow-hidden cursor-pointer transition-all"
+                                     data-role="PT Borneo Alumina Indonesia — Instrument & Automation Intern"
+                                     data-title="Field Calibration (HART / AMS Trex / Fluke)"
+                                     data-desc="Calibrating pressure & temperature transmitters across coal gasification, power, and alumina refinery units."
+                                     onclick="openLightbox(this)">
+                                    <div class="aspect-video w-full relative overflow-hidden bg-slate-950">
+                                        <!-- GANTI src DENGAN FILE FOTO ANDA (contoh: assets/bai-1.jpg) -->
+                                        <img src="" alt="Field Calibration" class="doc-img hidden w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <div class="doc-placeholder w-full h-full"></div>
+                                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80"></div>
+                                        <span class="absolute bottom-2 left-2.5 right-2.5 text-[11px] font-mono font-semibold text-white truncate">HART & AMS Trex Calibration</span>
+                                        <span class="absolute top-2 right-2 w-6 h-6 rounded-md bg-slate-900/80 text-amber-400 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <i class="fa-solid fa-expand"></i>
+                                        </span>
+                                    </div>
+                                    <label class="photo-upload-overlay hidden absolute inset-0 bg-slate-950/85 backdrop-blur-xs flex flex-col items-center justify-center text-amber-400 text-xs font-mono cursor-pointer z-10" onclick="event.stopPropagation()">
+                                        <i class="fa-solid fa-upload text-lg mb-1"></i>
+                                        <span>Ganti Foto Lokal</span>
+                                        <input type="file" accept="image/*" class="hidden" onchange="previewLocalPhoto(event, this)">
+                                    </label>
+                                </div>
+
+                                <div class="doc-card group relative rounded-xl bg-slate-950 border border-slate-800 hover:border-amber-400/60 overflow-hidden cursor-pointer transition-all"
+                                     data-role="PT Borneo Alumina Indonesia — Instrument & Automation Intern"
+                                     data-title="Schneider Electric FOXBORO DCS & I/O"
+                                     data-desc="Troubleshooting Foxboro DCS marshalling cabinets and installing field I/O modules."
+                                     onclick="openLightbox(this)">
+                                    <div class="aspect-video w-full relative overflow-hidden bg-slate-950">
+                                        <!-- GANTI src DENGAN FILE FOTO ANDA (contoh: assets/bai-2.jpg) -->
+                                        <img src="" alt="Foxboro DCS" class="doc-img hidden w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <div class="doc-placeholder w-full h-full"></div>
+                                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80"></div>
+                                        <span class="absolute bottom-2 left-2.5 right-2.5 text-[11px] font-mono font-semibold text-white truncate">Foxboro DCS & I/O Cabinet</span>
+                                        <span class="absolute top-2 right-2 w-6 h-6 rounded-md bg-slate-900/80 text-amber-400 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <i class="fa-solid fa-expand"></i>
+                                        </span>
+                                    </div>
+                                    <label class="photo-upload-overlay hidden absolute inset-0 bg-slate-950/85 backdrop-blur-xs flex flex-col items-center justify-center text-amber-400 text-xs font-mono cursor-pointer z-10" onclick="event.stopPropagation()">
+                                        <i class="fa-solid fa-upload text-lg mb-1"></i>
+                                        <span>Ganti Foto Lokal</span>
+                                        <input type="file" accept="image/*" class="hidden" onchange="previewLocalPhoto(event, this)">
+                                    </label>
+                                </div>
+
+                                <div class="doc-card group relative rounded-xl bg-slate-950 border border-slate-800 hover:border-amber-400/60 overflow-hidden cursor-pointer transition-all"
+                                     data-role="PT Borneo Alumina Indonesia — Instrument & Automation Intern"
+                                     data-title="Plant Commissioning & Punch List Closure"
+                                     data-desc="Conducting pre-commissioning loop inspections and closing technical punch list items at Mempawah smelter."
+                                     onclick="openLightbox(this)">
+                                    <div class="aspect-video w-full relative overflow-hidden bg-slate-950">
+                                        <!-- GANTI src DENGAN FILE FOTO ANDA (contoh: assets/bai-3.jpg) -->
+                                        <img src="" alt="Plant Commissioning" class="doc-img hidden w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <div class="doc-placeholder w-full h-full"></div>
+                                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80"></div>
+                                        <span class="absolute bottom-2 left-2.5 right-2.5 text-[11px] font-mono font-semibold text-white truncate">Plant Commissioning Punch List</span>
+                                        <span class="absolute top-2 right-2 w-6 h-6 rounded-md bg-slate-900/80 text-amber-400 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <i class="fa-solid fa-expand"></i>
+                                        </span>
+                                    </div>
+                                    <label class="photo-upload-overlay hidden absolute inset-0 bg-slate-950/85 backdrop-blur-xs flex flex-col items-center justify-center text-amber-400 text-xs font-mono cursor-pointer z-10" onclick="event.stopPropagation()">
+                                        <i class="fa-solid fa-upload text-lg mb-1"></i>
+                                        <span>Ganti Foto Lokal</span>
+                                        <input type="file" accept="image/*" class="hidden" onchange="previewLocalPhoto(event, this)">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Role 4: PT Indonesia Morowali Industrial Park (IMIP) -->
+                <div class="exp-item relative pl-8 sm:pl-10" data-category="internship">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-amber-400 ring-4 ring-slate-950"></span>
+                    <div class="bg-slate-900 border border-slate-800 hover:border-amber-500/50 rounded-2xl p-6 sm:p-8 transition-all">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                            <div>
+                                <div class="flex items-center flex-wrap gap-2">
+                                    <h3 class="text-xl font-bold text-white">Maintenance Electrical Intern</h3>
+                                    <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-amber-500/15 text-amber-400 border border-amber-500/30">MSIB BATCH 7</span>
+                                </div>
+                                <p class="text-base font-semibold text-cyan-400 mt-1">PT Indonesia Morowali Industrial Park (IMIP)</p>
+                            </div>
+                            <div class="text-left sm:text-right font-mono text-xs text-slate-400 space-y-1">
+                                <span class="block text-amber-400 font-semibold">Aug 2024 – Jan 2025</span>
+                                <span class="block"><i class="fa-solid fa-location-dot mr-1"></i>Morowali, Central Sulawesi</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-2.5 text-sm text-slate-300 list-disc list-inside marker:text-amber-400">
+                            <li>Performed preventive maintenance on conveyor crane electrical systems and other heavy industrial plant facilities.</li>
+                            <li>Repaired crane limit switches and conveyor SCADA systems at PT IMIP's Jetty facility.</li>
+                            <li>Upgraded PLC programming, SCADA, and Distributed Control Systems (DCS).</li>
+                        </ul>
+
+                        <!-- Dokumentasi Kegiatan: PT IMIP -->
+                        <div class="mt-6 pt-5 border-t border-slate-800/80">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider flex items-center space-x-2">
+                                    <i class="fa-solid fa-images"></i>
+                                    <span>Dokumentasi Kegiatan // Jetty SCADA & Crane Electrical</span>
+                                </span>
+                                <span class="text-[11px] font-mono text-slate-500">Klik foto untuk memperbesar</span>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                                <div class="doc-card group relative rounded-xl bg-slate-950 border border-slate-800 hover:border-amber-400/60 overflow-hidden cursor-pointer transition-all"
+                                     data-role="PT Indonesia Morowali Industrial Park (IMIP) — Electrical Intern"
+                                     data-title="Jetty Conveyor SCADA & Crane Limit Switches"
+                                     data-desc="Preventive maintenance and repair of crane safety limit switches and bulk conveyor SCADA telemetry at PT IMIP Jetty."
+                                     onclick="openLightbox(this)">
+                                    <div class="aspect-video w-full relative overflow-hidden bg-slate-950">
+                                        <!-- GANTI src DENGAN FILE FOTO ANDA (contoh: assets/imip-1.jpg) -->
+                                        <img src="" alt="Jetty Conveyor SCADA" class="doc-img hidden w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <div class="doc-placeholder w-full h-full"></div>
+                                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80"></div>
+                                        <span class="absolute bottom-2 left-2.5 right-2.5 text-[11px] font-mono font-semibold text-white truncate">Jetty Crane & Conveyor SCADA</span>
+                                        <span class="absolute top-2 right-2 w-6 h-6 rounded-md bg-slate-900/80 text-amber-400 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <i class="fa-solid fa-expand"></i>
+                                        </span>
+                                    </div>
+                                    <label class="photo-upload-overlay hidden absolute inset-0 bg-slate-950/85 backdrop-blur-xs flex flex-col items-center justify-center text-amber-400 text-xs font-mono cursor-pointer z-10" onclick="event.stopPropagation()">
+                                        <i class="fa-solid fa-upload text-lg mb-1"></i>
+                                        <span>Ganti Foto Lokal</span>
+                                        <input type="file" accept="image/*" class="hidden" onchange="previewLocalPhoto(event, this)">
+                                    </label>
+                                </div>
+
+                                <div class="doc-card group relative rounded-xl bg-slate-950 border border-slate-800 hover:border-amber-400/60 overflow-hidden cursor-pointer transition-all"
+                                     data-role="PT Indonesia Morowali Industrial Park (IMIP) — Electrical Intern"
+                                     data-title="PLC, SCADA & DCS System Upgrades"
+                                     data-desc="Upgrading industrial control logic, HMI tags, and electrical panel diagnostics across plant facilities."
+                                     onclick="openLightbox(this)">
+                                    <div class="aspect-video w-full relative overflow-hidden bg-slate-950">
+                                        <!-- GANTI src DENGAN FILE FOTO ANDA (contoh: assets/imip-2.jpg) -->
+                                        <img src="" alt="PLC SCADA Upgrade" class="doc-img hidden w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <div class="doc-placeholder w-full h-full"></div>
+                                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80"></div>
+                                        <span class="absolute bottom-2 left-2.5 right-2.5 text-[11px] font-mono font-semibold text-white truncate">PLC / SCADA / DCS Upgrade</span>
+                                        <span class="absolute top-2 right-2 w-6 h-6 rounded-md bg-slate-900/80 text-amber-400 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <i class="fa-solid fa-expand"></i>
+                                        </span>
+                                    </div>
+                                    <label class="photo-upload-overlay hidden absolute inset-0 bg-slate-950/85 backdrop-blur-xs flex flex-col items-center justify-center text-amber-400 text-xs font-mono cursor-pointer z-10" onclick="event.stopPropagation()">
+                                        <i class="fa-solid fa-upload text-lg mb-1"></i>
+                                        <span>Ganti Foto Lokal</span>
+                                        <input type="file" accept="image/*" class="hidden" onchange="previewLocalPhoto(event, this)">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Role 5: PT Petrokimia Gresik -->
+                <div class="exp-item relative pl-8 sm:pl-10" data-category="internship">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-amber-400 ring-4 ring-slate-950"></span>
+                    <div class="bg-slate-900 border border-slate-800 hover:border-amber-500/50 rounded-2xl p-6 sm:p-8 transition-all">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                            <div>
+                                <div class="flex items-center flex-wrap gap-2">
+                                    <h3 class="text-xl font-bold text-white">Maintenance Instrument & Control Intern</h3>
+                                    <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-amber-500/15 text-amber-400 border border-amber-500/30">INTERNSHIP</span>
+                                </div>
+                                <p class="text-base font-semibold text-cyan-400 mt-1">PT Petrokimia Gresik</p>
+                            </div>
+                            <div class="text-left sm:text-right font-mono text-xs text-slate-400 space-y-1">
+                                <span class="block text-amber-400 font-semibold">Jun 2024 – Jul 2024</span>
+                                <span class="block"><i class="fa-solid fa-location-dot mr-1"></i>Gresik, East Java</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-2.5 text-sm text-slate-300 list-disc list-inside marker:text-amber-400">
+                            <li>Performed preventive maintenance and calibration on field instrumentation devices (transmitters, control valves, pneumatic valves, limit switches) using HART Communicator, AMS Trex, and Fluke calibrators.</li>
+                            <li>Conducted troubleshooting based on <span class="text-white font-medium">P&ID diagrams</span> and closed-loop control systems while strictly adhering to occupational health and safety (OHS) standards.</li>
+                            <li>Executed troubleshooting, diagnostic, and maintenance tasks for PLC and DCS system devices.</li>
+                        </ul>
+
+                        <!-- Dokumentasi Kegiatan: PT Petrokimia Gresik -->
+                        <div class="mt-6 pt-5 border-t border-slate-800/80">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider flex items-center space-x-2">
+                                    <i class="fa-solid fa-images"></i>
+                                    <span>Dokumentasi Kegiatan // Control Valve & P&ID Maintenance</span>
+                                </span>
+                                <span class="text-[11px] font-mono text-slate-500">Klik foto untuk memperbesar</span>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                                <div class="doc-card group relative rounded-xl bg-slate-950 border border-slate-800 hover:border-amber-400/60 overflow-hidden cursor-pointer transition-all"
+                                     data-role="PT Petrokimia Gresik — Instrument & Control Intern"
+                                     data-title="Control Valve & Pneumatic Actuator Calibration"
+                                     data-desc="Preventive maintenance, stroke calibration, and HART communicator diagnostics on pneumatic control valves."
+                                     onclick="openLightbox(this)">
+                                    <div class="aspect-video w-full relative overflow-hidden bg-slate-950">
+                                        <!-- GANTI src DENGAN FILE FOTO ANDA (contoh: assets/petro-1.jpg) -->
+                                        <img src="" alt="Control Valve Maintenance" class="doc-img hidden w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <div class="doc-placeholder w-full h-full"></div>
+                                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80"></div>
+                                        <span class="absolute bottom-2 left-2.5 right-2.5 text-[11px] font-mono font-semibold text-white truncate">Pneumatic Control Valve PM</span>
+                                        <span class="absolute top-2 right-2 w-6 h-6 rounded-md bg-slate-900/80 text-amber-400 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <i class="fa-solid fa-expand"></i>
+                                        </span>
+                                    </div>
+                                    <label class="photo-upload-overlay hidden absolute inset-0 bg-slate-950/85 backdrop-blur-xs flex flex-col items-center justify-center text-amber-400 text-xs font-mono cursor-pointer z-10" onclick="event.stopPropagation()">
+                                        <i class="fa-solid fa-upload text-lg mb-1"></i>
+                                        <span>Ganti Foto Lokal</span>
+                                        <input type="file" accept="image/*" class="hidden" onchange="previewLocalPhoto(event, this)">
+                                    </label>
+                                </div>
+
+                                <div class="doc-card group relative rounded-xl bg-slate-950 border border-slate-800 hover:border-amber-400/60 overflow-hidden cursor-pointer transition-all"
+                                     data-role="PT Petrokimia Gresik — Instrument & Control Intern"
+                                     data-title="P&ID Closed-Loop Control Troubleshooting"
+                                     data-desc="Tracing P&ID schematics and diagnosing closed-loop transmitter signals under strict plant OHS protocols."
+                                     onclick="openLightbox(this)">
+                                    <div class="aspect-video w-full relative overflow-hidden bg-slate-950">
+                                        <!-- GANTI src DENGAN FILE FOTO ANDA (contoh: assets/petro-2.jpg) -->
+                                        <img src="" alt="PID Troubleshooting" class="doc-img hidden w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <div class="doc-placeholder w-full h-full"></div>
+                                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80"></div>
+                                        <span class="absolute bottom-2 left-2.5 right-2.5 text-[11px] font-mono font-semibold text-white truncate">P&ID & Closed-Loop Diagnostics</span>
+                                        <span class="absolute top-2 right-2 w-6 h-6 rounded-md bg-slate-900/80 text-amber-400 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <i class="fa-solid fa-expand"></i>
+                                        </span>
+                                    </div>
+                                    <label class="photo-upload-overlay hidden absolute inset-0 bg-slate-950/85 backdrop-blur-xs flex flex-col items-center justify-center text-amber-400 text-xs font-mono cursor-pointer z-10" onclick="event.stopPropagation()">
+                                        <i class="fa-solid fa-upload text-lg mb-1"></i>
+                                        <span>Ganti Foto Lokal</span>
+                                        <input type="file" accept="image/*" class="hidden" onchange="previewLocalPhoto(event, this)">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Role 6: PT Geo Dipa Energi (Persero) Unit 1 Dieng -->
+                <div class="exp-item relative pl-8 sm:pl-10" data-category="internship">
+                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-amber-400 ring-4 ring-slate-950"></span>
+                    <div class="bg-slate-900 border border-slate-800 hover:border-amber-500/50 rounded-2xl p-6 sm:p-8 transition-all">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                            <div>
+                                <div class="flex items-center flex-wrap gap-2">
+                                    <h3 class="text-xl font-bold text-white">Maintenance Electrical Instrumentation & Control Intern</h3>
+                                    <span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-amber-500/15 text-amber-400 border border-amber-500/30">INTERNSHIP</span>
+                                </div>
+                                <p class="text-base font-semibold text-cyan-400 mt-1">PT Geo Dipa Energi (Persero) Unit 1 Dieng</p>
+                            </div>
+                            <div class="text-left sm:text-right font-mono text-xs text-slate-400 space-y-1">
+                                <span class="block text-amber-400 font-semibold">Jan 2024 – Feb 2024</span>
+                                <span class="block"><i class="fa-solid fa-location-dot mr-1"></i>Dieng, Central Java</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-2.5 text-sm text-slate-300 list-disc list-inside marker:text-amber-400">
+                            <li>Performed CM/PM on field instruments, including temperature, pressure, flow transmitters, control valves, and auxiliary devices.</li>
+                            <li>Executed calibration, loop checks, and device configuration using HART Communicator, AMS Trex, and Fluke.</li>
+                            <li>Replaced air dryer for water filtration on steam field separator LCV and removed silica scaling on gate valves.</li>
+                        </ul>
+
+                        <!-- Dokumentasi Kegiatan: PT Geo Dipa Energi -->
+                        <div class="mt-6 pt-5 border-t border-slate-800/80">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider flex items-center space-x-2">
+                                    <i class="fa-solid fa-images"></i>
+                                    <span>Dokumentasi Kegiatan // Geothermal Steam Field I&C</span>
+                                </span>
+                                <span class="text-[11px] font-mono text-slate-500">Klik foto untuk memperbesar</span>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                                <div class="doc-card group relative rounded-xl bg-slate-950 border border-slate-800 hover:border-amber-400/60 overflow-hidden cursor-pointer transition-all"
+                                     data-role="PT Geo Dipa Energi (Persero) Unit 1 Dieng — EIC Intern"
+                                     data-title="Geothermal Wellhead Transmitter Loop Check"
+                                     data-desc="Pressure, temperature, and flow transmitter calibration & loop verification on Dieng geothermal steam lines."
+                                     onclick="openLightbox(this)">
+                                    <div class="aspect-video w-full relative overflow-hidden bg-slate-950">
+                                        <!-- GANTI src DENGAN FILE FOTO ANDA (contoh: assets/geodipa-1.jpg) -->
+                                        <img src="" alt="Geothermal Loop Check" class="doc-img hidden w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <div class="doc-placeholder w-full h-full"></div>
+                                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80"></div>
+                                        <span class="absolute bottom-2 left-2.5 right-2.5 text-[11px] font-mono font-semibold text-white truncate">Geothermal Transmitter Loop Check</span>
+                                        <span class="absolute top-2 right-2 w-6 h-6 rounded-md bg-slate-900/80 text-amber-400 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <i class="fa-solid fa-expand"></i>
+                                        </span>
+                                    </div>
+                                    <label class="photo-upload-overlay hidden absolute inset-0 bg-slate-950/85 backdrop-blur-xs flex flex-col items-center justify-center text-amber-400 text-xs font-mono cursor-pointer z-10" onclick="event.stopPropagation()">
+                                        <i class="fa-solid fa-upload text-lg mb-1"></i>
+                                        <span>Ganti Foto Lokal</span>
+                                        <input type="file" accept="image/*" class="hidden" onchange="previewLocalPhoto(event, this)">
+                                    </label>
+                                </div>
+
+                                <div class="doc-card group relative rounded-xl bg-slate-950 border border-slate-800 hover:border-amber-400/60 overflow-hidden cursor-pointer transition-all"
+                                     data-role="PT Geo Dipa Energi (Persero) Unit 1 Dieng — EIC Intern"
+                                     data-title="Steam Separator LCV & Gate Valve Maintenance"
+                                     data-desc="Replacing instrument air dryer filtration on separator Level Control Valve (LCV) and descaling silica buildup."
+                                     onclick="openLightbox(this)">
+                                    <div class="aspect-video w-full relative overflow-hidden bg-slate-950">
+                                        <!-- GANTI src DENGAN FILE FOTO ANDA (contoh: assets/geodipa-2.jpg) -->
+                                        <img src="" alt="Separator LCV Maintenance" class="doc-img hidden w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <div class="doc-placeholder w-full h-full"></div>
+                                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80"></div>
+                                        <span class="absolute bottom-2 left-2.5 right-2.5 text-[11px] font-mono font-semibold text-white truncate">Separator LCV & Air Dryer PM</span>
+                                        <span class="absolute top-2 right-2 w-6 h-6 rounded-md bg-slate-900/80 text-amber-400 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <i class="fa-solid fa-expand"></i>
+                                        </span>
+                                    </div>
+                                    <label class="photo-upload-overlay hidden absolute inset-0 bg-slate-950/85 backdrop-blur-xs flex flex-col items-center justify-center text-amber-400 text-xs font-mono cursor-pointer z-10" onclick="event.stopPropagation()">
+                                        <i class="fa-solid fa-upload text-lg mb-1"></i>
+                                        <span>Ganti Foto Lokal</span>
+                                        <input type="file" accept="image/*" class="hidden" onchange="previewLocalPhoto(event, this)">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- LIGHTBOX MODAL FOR DOCUMENTATION GALLERY -->
+    <div id="doc-lightbox" class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4" onclick="closeLightbox(event)">
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-3xl w-full overflow-hidden shadow-2xl glow-cyan" onclick="event.stopPropagation()">
+            <div class="flex items-center justify-between px-6 py-4 border-b border-slate-800">
+                <div>
+                    <span id="lightbox-role" class="block text-[11px] font-mono text-cyan-400 uppercase tracking-wider">ROLE</span>
+                    <h4 id="lightbox-title" class="text-base sm:text-lg font-bold text-white">Documentation Title</h4>
+                </div>
+                <button onclick="closeLightbox()" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-colors">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <div class="aspect-video w-full bg-slate-950 relative overflow-hidden flex items-center justify-center">
+                <img id="lightbox-img" src="" alt="Documentation Preview" class="hidden w-full h-full object-contain">
+                <div id="lightbox-placeholder" class="w-full h-full"></div>
+            </div>
+            <div class="px-6 py-4 bg-slate-950 border-t border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <p id="lightbox-desc" class="text-sm text-slate-300 leading-relaxed">Description</p>
+                <span class="text-[11px] font-mono text-slate-500 shrink-0">ESC / Click outside to close</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. ENGINEERING PROJECTS & PORTFOLIO SECTION -->
+    <section id="projects" class="py-24 bg-obsidian border-t border-slate-800/80 control-grid">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-14">
+                <span class="text-xs font-mono font-bold uppercase tracking-widest text-emerald-400">02 // Applied Engineering</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">Engineering Projects & Portfolio</h2>
+                <p class="text-slate-400 mt-2 max-w-2xl">Click "Inspect Technical Specs" on any project card to expand full hardware architecture, control logic, and communication protocols.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Project 1: Water Treatment Plant (WTP) -->
+                <div class="bg-slate-900 border border-slate-800 hover:border-cyan-500/50 rounded-2xl p-7 flex flex-col justify-between transition-all shadow-xl">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-cyan-500/15 text-cyan-400 border border-cyan-500/30">FINAL PROJECT</span>
+                            <span class="text-xs font-mono text-slate-400">Jan 2026 – Jul 2026</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Development of a Water Treatment Plant (WTP) Using PLC and SCADA</h3>
+                        <p class="text-sm text-slate-300 mt-3 leading-relaxed">
+                            Designed closed-loop Proportional control on Outseal PLC for automated pH management, integrated real-time thermal monitoring via RS485 Modbus RTU, and built supervisory Cloud SCADA interfaces.
+                        </p>
+
+                        <!-- Tech Stack Tags -->
+                        <div class="flex flex-wrap gap-2 mt-5 font-mono text-[11px]">
+                            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800 text-cyan-400">Outseal PLC</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800 text-emerald-400">Haiwell HMI & Cloud SCADA</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800 text-amber-400">RS485 Modbus RTU</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800 text-slate-300">RTD PT100 & SSR</span>
+                        </div>
+
+                        <!-- Expandable Technical Specs -->
+                        <div id="specs-wtp" class="hidden mt-5 pt-5 border-t border-slate-800 space-y-2.5 text-xs text-slate-300 bg-slate-950/80 p-4 rounded-xl">
+                            <p class="font-mono text-cyan-400 font-bold uppercase tracking-wider mb-1">// Technical Specifications</p>
+                            <p><span class="text-white font-semibold">pH Control Loop:</span> Closed-loop Proportional control programmed in Outseal Studio driving dual-dosing pumps and dual-solenoid valves.</p>
+                            <p><span class="text-white font-semibold">Thermal Loop:</span> Integrated RTD PT100 temperature sensor with RS485 Modbus RTU converter for real-time thermal monitoring and Solid-State Relay (SSR) regulation.</p>
+                            <p><span class="text-white font-semibold">SCADA & Telemetry:</span> Developed Haiwell HMI and Cloud SCADA interface for register management, historical data visualization, and remote supervisory control.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-xs font-mono text-slate-400">UGM Capstone</span>
+                        <button onclick="toggleSpecs('specs-wtp', this)" class="text-xs font-mono font-semibold text-cyan-400 hover:text-cyan-300 flex items-center space-x-1.5">
+                            <span>Inspect Technical Specs</span>
+                            <i class="fa-solid fa-chevron-down transition-transform"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2: Rapid Identification of Leaf Diseases -->
+                <div class="bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-2xl p-7 flex flex-col justify-between transition-all shadow-xl">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">OLIVIA UNS 2023 DELEGATE</span>
+                            <span class="text-xs font-mono text-slate-400">Oct 2023 – Nov 2023</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Prototype: Rapid Identification of Leaf Diseases in Apple Trees</h3>
+                        <p class="text-sm text-slate-300 mt-3 leading-relaxed">
+                            Represented Universitas Gadjah Mada in the National Vocational Olympiad (OLIVIA UNS 2023). Engineered an embedded computer-vision prototype for rapid agricultural disease diagnosis.
+                        </p>
+
+                        <!-- Tech Stack Tags -->
+                        <div class="flex flex-wrap gap-2 mt-5 font-mono text-[11px]">
+                            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800 text-emerald-400">Orange Pi</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800 text-cyan-400">Python</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800 text-amber-400">3D Printed Enclosure</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800 text-slate-300">Embedded Vision</span>
+                        </div>
+
+                        <!-- Expandable Technical Specs -->
+                        <div id="specs-olivia" class="hidden mt-5 pt-5 border-t border-slate-800 space-y-2.5 text-xs text-slate-300 bg-slate-950/80 p-4 rounded-xl">
+                            <p class="font-mono text-emerald-400 font-bold uppercase tracking-wider mb-1">// Technical Specifications</p>
+                            <p><span class="text-white font-semibold">Compute & Software:</span> Deployed Python-based image classification pipeline on an Orange Pi single-board computer for real-time leaf pathology detection.</p>
+                            <p><span class="text-white font-semibold">Mechanical Packaging:</span> Designed a custom ergonomic protective housing utilizing CAD modeling and additive 3D printing for field portability.</p>
+                            <p><span class="text-white font-semibold">Recognition:</span> Official University Delegate representing DTEDI SV UGM at OLIVIA UNS 2023.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-xs font-mono text-slate-400">National Olympiad Prototype</span>
+                        <button onclick="toggleSpecs('specs-olivia', this)" class="text-xs font-mono font-semibold text-emerald-400 hover:text-emerald-300 flex items-center space-x-1.5">
+                            <span>Inspect Technical Specs</span>
+                            <i class="fa-solid fa-chevron-down transition-transform"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 3: Smart Growth Chamber -->
+                <div class="bg-slate-900 border border-slate-800 hover:border-amber-500/50 rounded-2xl p-7 flex flex-col justify-between transition-all shadow-xl">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-amber-500/15 text-amber-400 border border-amber-500/30">FUZZY LOGIC CONTROL</span>
+                            <span class="text-xs font-mono text-slate-400">May 2024 – Jun 2024</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Project Smart Growth Chamber</h3>
+                        <p class="text-sm text-slate-300 mt-3 leading-relaxed">
+                            Developed an automated micro-climate temperature and humidity monitoring and control chamber driven by multi-input Fuzzy Logic inference rules.
+                        </p>
+
+                        <!-- Tech Stack Tags -->
+                        <div class="flex flex-wrap gap-2 mt-5 font-mono text-[11px]">
+                            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800 text-amber-400">Fuzzy Logic Algorithm</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800 text-cyan-400">DHT11 Sensor</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800 text-emerald-400">Microcontroller C++</span>
+                        </div>
+
+                        <!-- Expandable Technical Specs -->
+                        <div id="specs-chamber" class="hidden mt-5 pt-5 border-t border-slate-800 space-y-2.5 text-xs text-slate-300 bg-slate-950/80 p-4 rounded-xl">
+                            <p class="font-mono text-amber-400 font-bold uppercase tracking-wider mb-1">// Technical Specifications</p>
+                            <p><span class="text-white font-semibold">Sensing Layer:</span> Continuous ambient temperature and relative humidity acquisition via DHT11 digital transducer.</p>
+                            <p><span class="text-white font-semibold">Control Strategy:</span> Formulated custom Fuzzy Logic membership functions and rule matrices to smoothly automate actuator activation and deactivation without oscillation.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-xs font-mono text-slate-400">Environmental Automation</span>
+                        <button onclick="toggleSpecs('specs-chamber', this)" class="text-xs font-mono font-semibold text-amber-400 hover:text-amber-300 flex items-center space-x-1.5">
+                            <span>Inspect Technical Specs</span>
+                            <i class="fa-solid fa-chevron-down transition-transform"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 4: Autonomous / Marine Electronics - MICROCLUB UGM -->
+                <div class="bg-slate-900 border border-slate-800 hover:border-cyan-500/50 rounded-2xl p-7 flex flex-col justify-between transition-all shadow-xl">
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-cyan-500/15 text-cyan-400 border border-cyan-500/30">MICROCLUB UGM</span>
+                            <span class="text-xs font-mono text-slate-400">Mar 2024 – Jan 2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Autonomous / Marine Electronics & Custom PCB Engineering</h3>
+                        <p class="text-sm text-slate-300 mt-3 leading-relaxed">
+                            Engineered marine electronics architecture, 3D hull/structural boat models, and fabricated custom Printed Circuit Boards (PCBs) for unmanned surface vehicle components.
+                        </p>
+
+                        <!-- Tech Stack Tags -->
+                        <div class="flex flex-wrap gap-2 mt-5 font-mono text-[11px]">
+                            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800 text-cyan-400">KiCad / EAGLE</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800 text-emerald-400">SolidWorks / Inventor</span>
+                            <span class="px-2.5 py-1 rounded bg-slate-950 border border-slate-800 text-amber-400">Custom PCB Fabrication</span>
+                        </div>
+
+                        <!-- Expandable Technical Specs -->
+                        <div id="specs-marine" class="hidden mt-5 pt-5 border-t border-slate-800 space-y-2.5 text-xs text-slate-300 bg-slate-950/80 p-4 rounded-xl">
+                            <p class="font-mono text-cyan-400 font-bold uppercase tracking-wider mb-1">// Technical Specifications</p>
+                            <p><span class="text-white font-semibold">Hardware & PCB Design:</span> Schematic capture, multi-layer PCB routing, and board fabrication for power distribution and propulsion control electronics.</p>
+                            <p><span class="text-white font-semibold">3D CAD Modeling:</span> Created precision 3D boat assemblies and watertight electronics bays using SolidWorks and Autodesk Inventor.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between">
+                        <span class="text-xs font-mono text-slate-400">Electronics Engineer Role</span>
+                        <button onclick="toggleSpecs('specs-marine', this)" class="text-xs font-mono font-semibold text-cyan-400 hover:text-cyan-300 flex items-center space-x-1.5">
+                            <span>Inspect Technical Specs</span>
+                            <i class="fa-solid fa-chevron-down transition-transform"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. TECHNICAL STACK & SKILLS MATRIX SECTION -->
+    <section id="skills" class="py-24 bg-slate-950 border-t border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <span class="text-xs font-mono font-bold uppercase tracking-widest text-amber-400">03 // Capabilities Matrix</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">Technical Stack & Certifications</h2>
+                    <p class="text-slate-400 mt-2 max-w-2xl">Filter across control systems, engineering CAD/EDA software, verified industry certifications, honors, and languages.</p>
+                </div>
+
+                <!-- Interactive Category Tabs -->
+                <div class="flex flex-wrap gap-2" id="skill-tabs">
+                    <button data-tab="all" class="skill-tab-btn active px-4 py-2 rounded-lg text-xs font-mono font-semibold bg-cyan-500 text-slate-950 transition-all">
+                        All Matrix
+                    </button>
+                    <button data-tab="control" class="skill-tab-btn px-4 py-2 rounded-lg text-xs font-mono font-semibold bg-slate-900 text-slate-300 border border-slate-800 hover:border-cyan-500/50 transition-all">
+                        Control & Automation
+                    </button>
+                    <button data-tab="software" class="skill-tab-btn px-4 py-2 rounded-lg text-xs font-mono font-semibold bg-slate-900 text-slate-300 border border-slate-800 hover:border-cyan-500/50 transition-all">
+                        Engineering Software
+                    </button>
+                    <button data-tab="certs" class="skill-tab-btn px-4 py-2 rounded-lg text-xs font-mono font-semibold bg-slate-900 text-slate-300 border border-slate-800 hover:border-cyan-500/50 transition-all">
+                        Certifications & Honors
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="skills-grid">
+                
+                <!-- Card A: Control & Automation Systems -->
+                <div class="skill-card bg-slate-900 border border-slate-800 rounded-2xl p-7" data-skill-cat="control">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-lg">
+                            <i class="fa-solid fa-sliders"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">Control & Automation Systems</h3>
+                            <span class="text-xs font-mono text-cyan-400">DCS • PLC • SCADA • FIELD INSTRUMENTATION</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div>
+                            <span class="block text-xs font-mono text-slate-400 mb-2">DCS Maintenance & Migration</span>
+                            <div class="flex flex-wrap gap-2 font-mono text-xs">
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-cyan-300">Honeywell Experion PKS</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-cyan-300">Schneider Foxboro DCS</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-cyan-300">Rockwell FactoryTalk View</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-cyan-300">Studio 5000</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="block text-xs font-mono text-slate-400 mb-2">PLC Programming & SCADA Configuration</span>
+                            <div class="flex flex-wrap gap-2 font-mono text-xs">
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-emerald-300">CX-Programmer</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-emerald-300">Outseal Studio</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-emerald-300">TIA Portal</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-emerald-300">EcoStruxure Machine Expert</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-emerald-300">Haiwell Cloud SCADA</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-emerald-300">AVEVA</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-emerald-300">Vijeo Designer</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="block text-xs font-mono text-slate-400 mb-2">Field Calibration, Diagnostics & Core Competencies</span>
+                            <div class="flex flex-wrap gap-2 font-mono text-xs">
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-amber-300">HART Communicator</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-amber-300">AMS Trex</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-amber-300">Fluke Calibrators</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-slate-300">HMI Integration</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-slate-300">Signal Analysis</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-slate-300">P&ID Troubleshooting</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card B: Engineering & Design Software -->
+                <div class="skill-card bg-slate-900 border border-slate-800 rounded-2xl p-7" data-skill-cat="software">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-11 h-11 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-lg">
+                            <i class="fa-solid fa-compass-drafting"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">Engineering & Design Software</h3>
+                            <span class="text-xs font-mono text-emerald-400">EDA • 3D CAD • SIMULATION • PROGRAMMING</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div>
+                            <span class="block text-xs font-mono text-slate-400 mb-2">Electronics & PCB Design (EDA)</span>
+                            <div class="flex flex-wrap gap-2 font-mono text-xs">
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-emerald-300">KiCad</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-emerald-300">EAGLE</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-emerald-300">Proteus 8</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-emerald-300">FluidSIM</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="block text-xs font-mono text-slate-400 mb-2">3D Mechanical CAD & Prototyping</span>
+                            <div class="flex flex-wrap gap-2 font-mono text-xs">
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-cyan-300">SolidWorks</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-cyan-300">Autodesk Inventor</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-cyan-300">Autodesk Fusion</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-slate-300">Figma</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-slate-300">Canva</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="block text-xs font-mono text-slate-400 mb-2">Programming & Scientific Computing</span>
+                            <div class="flex flex-wrap gap-2 font-mono text-xs">
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-amber-300">Python</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-amber-300">C++</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-amber-300">MATLAB</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-amber-300">Arduino IDE</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card C: Certifications & Honors -->
+                <div class="skill-card bg-slate-900 border border-slate-800 rounded-2xl p-7" data-skill-cat="certs">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-11 h-11 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 text-lg">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">Certifications & Honors</h3>
+                            <span class="text-xs font-mono text-amber-400">AWARDS • SAFETY CREDENTIALS • LICENSES</span>
+                        </div>
+                    </div>
+
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li class="flex items-start space-x-3 bg-slate-950 p-3 rounded-xl border border-slate-800">
+                            <i class="fa-solid fa-trophy text-amber-400 mt-1"></i>
+                            <div>
+                                <span class="font-semibold text-white block">Best Graduate (Cum Laude) – DTEDI SV UGM 2026</span>
+                                <span class="text-xs text-slate-400 font-mono">Dept. of Electrical Engineering & Informatics</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-3 bg-slate-950 p-3 rounded-xl border border-slate-800">
+                            <i class="fa-solid fa-medal text-cyan-400 mt-1"></i>
+                            <div>
+                                <span class="font-semibold text-white block">Outstanding Participant & Co-PIC – MSIB Kampus Merdeka Batch 7</span>
+                                <span class="text-xs text-slate-400 font-mono">PT Indonesia Morowali Industrial Park (IMIP) • 2024</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-3 bg-slate-950 p-3 rounded-xl border border-slate-800">
+                            <i class="fa-solid fa-star text-emerald-400 mt-1"></i>
+                            <div>
+                                <span class="font-semibold text-white block">University Delegate – Olympiad of Vocational Studies (OLIVIA) 2023</span>
+                                <span class="text-xs text-slate-400 font-mono">Representing DTEDI SV UGM at UNS</span>
+                            </div>
+                        </li>
+                        <li class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1 font-mono text-xs">
+                            <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 flex items-center space-x-2.5">
+                                <i class="fa-solid fa-certificate text-cyan-400"></i>
+                                <span class="text-slate-200">IWCF Level 1 Certified</span>
+                            </div>
+                            <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 flex items-center space-x-2.5">
+                                <i class="fa-solid fa-certificate text-emerald-400"></i>
+                                <span class="text-slate-200">Electro Pneumatic KCCI</span>
+                            </div>
+                            <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 flex items-center space-x-2.5 sm:col-span-2">
+                                <i class="fa-solid fa-id-card text-amber-400"></i>
+                                <span class="text-slate-200">Official Driving Licenses A & C (Indonesia)</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Card D: Languages & Soft Skills -->
+                <div class="skill-card bg-slate-900 border border-slate-800 rounded-2xl p-7 flex flex-col justify-between" data-skill-cat="certs">
+                    <div>
+                        <div class="flex items-center space-x-3 mb-6">
+                            <div class="w-11 h-11 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 text-lg">
+                                <i class="fa-solid fa-language"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-white">Languages & Professional Strengths</h3>
+                                <span class="text-xs font-mono text-cyan-400">GLOBAL COMMUNICATION & LEADERSHIP</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <span class="block text-xs font-mono text-slate-400 mb-3">Spoken & Technical Languages</span>
+                            <div class="grid grid-cols-2 gap-3">
+                                <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800 flex items-center justify-between">
+                                    <span class="font-semibold text-white text-sm">Indonesian</span>
+                                    <span class="text-[11px] font-mono text-emerald-400 bg-emerald-950 px-2 py-0.5 rounded">Native</span>
+                                </div>
+                                <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800 flex items-center justify-between">
+                                    <span class="font-semibold text-white text-sm">English</span>
+                                    <span class="text-[11px] font-mono text-cyan-400 bg-cyan-950 px-2 py-0.5 rounded">Proficient</span>
+                                </div>
+                                <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800 flex items-center justify-between">
+                                    <span class="font-semibold text-white text-sm">Malaysian</span>
+                                    <span class="text-[11px] font-mono text-amber-400 bg-amber-950 px-2 py-0.5 rounded">Fluent</span>
+                                </div>
+                                <div class="bg-slate-950 p-3.5 rounded-xl border border-slate-800 flex items-center justify-between">
+                                    <span class="font-semibold text-white text-sm">Arabic</span>
+                                    <span class="text-[11px] font-mono text-slate-300 bg-slate-800 px-2 py-0.5 rounded">Working</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="block text-xs font-mono text-slate-400 mb-3">Core Soft Skills</span>
+                            <div class="flex flex-wrap gap-2 font-mono text-xs">
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-slate-200">Troubleshooting & Problem Solving</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-slate-200">Leadership</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-slate-200">Cross-Functional Teamwork</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-slate-200">Adaptability</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-slate-200">Time Management</span>
+                                <span class="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-slate-200">Technical Communication</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. EDUCATION & LEADERSHIP SECTION -->
+    <section id="education" class="py-24 bg-obsidian border-t border-slate-800/80 control-grid">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-14">
+                <span class="text-xs font-mono font-bold uppercase tracking-widest text-cyan-400">04 // Academic & Organizational Track</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">Education & Leadership</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Education Highlight (7 Cols) -->
+                <div class="lg:col-span-7 bg-slate-900 border border-slate-800 hover:border-cyan-500/50 rounded-2xl p-8 flex flex-col justify-between transition-all">
+                    <div>
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-cyan-500/15 text-cyan-400 border border-cyan-500/30">2022 – 2026</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">CUM LAUDE GRADUATE</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white">Universitas Gadjah Mada</h3>
+                        <p class="text-base font-semibold text-cyan-400 mt-1">Bachelor of Applied Science (B.A.S.) in Instrumentation and Control Engineering Technology</p>
+                        <p class="text-xs font-mono text-slate-400 mt-1"><i class="fa-solid fa-location-dot mr-1"></i>Yogyakarta, Indonesia</p>
+
+                        <ul class="mt-6 space-y-3 text-sm text-slate-300 list-disc list-inside marker:text-cyan-400">
+                            <li>Graduated as <span class="text-white font-semibold">Best Graduate (Cum Laude)</span> from the Department of Electrical Engineering and Informatics (DTEDI), Vocational College UGM (2026).</li>
+                            <li>Completed 4 comprehensive industrial internships across petrochemical, geothermal, alumina refining, and metallurgical facilities, alongside serving as Assistant Lecturer for Sensors & Actuators.</li>
+                            <li>Developed applied automation systems (PLC-SCADA Water Treatment Plant, Fuzzy Logic Smart Growth Chamber) and represented UGM at OLIVIA UNS 2023.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Organizational Leadership (5 Cols) -->
+                <div class="lg:col-span-5 space-y-6">
+                    <!-- MICROCLUB UGM -->
+                    <div class="bg-slate-900 border border-slate-800 hover:border-emerald-500/50 rounded-2xl p-6 transition-all">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-mono font-bold text-emerald-400">MICROCLUB UGM</span>
+                            <span class="text-xs font-mono text-slate-400">Mar 2024 – Jan 2025</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-white">Electronics Engineer</h4>
+                        <p class="text-sm text-slate-300 mt-2 leading-relaxed">
+                            Designed 3D boat models, engineered marine electronics systems, and fabricated custom PCBs for autonomous boat electronic components.
+                        </p>
+                    </div>
+
+                    <!-- KMTEDI UGM -->
+                    <div class="bg-slate-900 border border-slate-800 hover:border-amber-500/50 rounded-2xl p-6 transition-all">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-mono font-bold text-amber-400">KMTEDI UGM</span>
+                            <span class="text-xs font-mono text-slate-400">Oct 2023 – Jan 2025</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-white">Entrepreneurship Staff</h4>
+                        <p class="text-sm text-slate-300 mt-2 leading-relaxed">
+                            Managed entrepreneurial projects, organizational uniform (PDH) and merchandise programs, and developed the Bill of Materials (BOM) for secretariat facility repairs.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. INTERACTIVE CONTACT & FOOTER SECTION -->
+    <footer id="contact" class="bg-slate-950 border-t border-slate-800/80 pt-20 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-16 border-b border-slate-800/80">
+                <!-- Left Column: Direct Contact Cards with One-Click Copy -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div>
+                        <span class="text-xs font-mono font-bold uppercase tracking-widest text-emerald-400">05 // Direct Terminal</span>
+                        <h2 class="text-3xl font-bold text-white mt-2">Initiate Connection</h2>
+                        <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+                            Available for engineering consultations, DCS/PLC/SCADA automation initiatives, and technical collaborations. Click below to copy direct contact credentials.
+                        </p>
+                    </div>
+
+                    <div class="space-y-3.5">
+                        <!-- Email Copy Card -->
+                        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 flex items-center justify-between gap-4">
+                            <div class="flex items-center space-x-3.5 min-w-0">
+                                <div class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0">
+                                    <i class="fa-regular fa-envelope"></i>
+                                </div>
+                                <div class="truncate">
+                                    <span class="block text-[11px] font-mono text-slate-400">EMAIL ADDRESS</span>
+                                    <a href="mailto:septiansyena789@gmail.com" class="text-sm font-mono font-semibold text-white hover:text-cyan-400 truncate block">septiansyena789@gmail.com</a>
+                                </div>
+                            </div>
+                            <button onclick="copyToClipboard('septiansyena789@gmail.com', 'Email Address')" class="px-3.5 py-2 rounded-lg bg-slate-950 border border-slate-700 hover:border-cyan-400 text-xs font-mono text-cyan-400 shrink-0 transition-colors">
+                                <i class="fa-regular fa-copy mr-1"></i> Copy
+                            </button>
+                        </div>
+
+                        <!-- Phone Copy Card -->
+                        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 flex items-center justify-between gap-4">
+                            <div class="flex items-center space-x-3.5 min-w-0">
+                                <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div class="truncate">
+                                    <span class="block text-[11px] font-mono text-slate-400">PHONE / WHATSAPP</span>
+                                    <span class="text-sm font-mono font-semibold text-white block">(+62) 858-4378-7499</span>
+                                </div>
+                            </div>
+                            <button onclick="copyToClipboard('+62 858-4378-7499', 'Phone Number')" class="px-3.5 py-2 rounded-lg bg-slate-950 border border-slate-700 hover:border-emerald-400 text-xs font-mono text-emerald-400 shrink-0 transition-colors">
+                                <i class="fa-regular fa-copy mr-1"></i> Copy
+                            </button>
+                        </div>
+
+                        <!-- LinkedIn Link Card -->
+                        <a href="https://www.linkedin.com/in/septiansyenafirmansyah" target="_blank" rel="noopener noreferrer" class="bg-slate-900 border border-slate-800 hover:border-cyan-500/50 rounded-xl p-4 flex items-center justify-between gap-4 transition-colors group">
+                            <div class="flex items-center space-x-3.5 min-w-0">
+                                <div class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </div>
+                                <div class="truncate">
+                                    <span class="block text-[11px] font-mono text-slate-400">LINKEDIN PROFILE</span>
+                                    <span class="text-sm font-mono font-semibold text-white group-hover:text-cyan-400 truncate block">linkedin.com/in/septiansyenafirmansyah</span>
+                                </div>
+                            </div>
+                            <span class="text-xs font-mono text-slate-400 group-hover:text-cyan-400 shrink-0">
+                                Open <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Quick Message Dispatch Form -->
+                <div class="lg:col-span-6">
+                    <form id="contact-form" class="bg-slate-900 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-4">
+                        <div class="flex items-center justify-between pb-2 border-b border-slate-800">
+                            <span class="text-xs font-mono font-bold text-cyan-400 uppercase tracking-wider">// Dispatch Direct Message</span>
+                            <span class="text-[11px] font-mono text-slate-500">SMTP_READY</span>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-mono text-slate-400 mb-1.5">SENDER_NAME</label>
+                                <input type="text" required placeholder="Your Name" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-mono text-slate-400 mb-1.5">SENDER_EMAIL</label>
+                                <input type="email" required placeholder="you@company.com" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-mono text-slate-400 mb-1.5">SUBJECT</label>
+                            <input type="text" required placeholder="DCS / PLC Automation Inquiry" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-mono text-slate-400 mb-1.5">PAYLOAD_MESSAGE</label>
+                            <textarea rows="3" required placeholder="Enter technical inquiry or collaboration details..." class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3.5 rounded-xl font-mono font-bold text-xs uppercase tracking-wider text-slate-950 bg-gradient-to-r from-cyan-400 to-emerald-400 hover:from-cyan-300 hover:to-emerald-300 transition-all shadow-lg shadow-cyan-500/20 flex items-center justify-center space-x-2">
+                            <span>Transmit Message</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright Bar -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-slate-500">
+                <div class="flex items-center space-x-3">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                    <span class="text-slate-300 font-semibold">Septian Syena Firmansyah</span>
+                    <span>• Asia Systems Engineer</span>
+                </div>
+                <p>&copy; 2026 Septian Syena Firmansyah. Jakarta / Mojokerto, Indonesia.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // 1. Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 2. Toast Notification Helper
+        let toastTimeout;
+        function showToast(title, message, iconClass = 'fa-check') {
+            const toast = document.getElementById('toast-notification');
+            document.getElementById('toast-title').textContent = title;
+            document.getElementById('toast-message').textContent = message;
+            document.getElementById('toast-icon').className = `fa-solid ${iconClass}`;
+
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0');
+            }, 3500);
+        }
+
+        // 3. Copy-to-Clipboard Function (iFrame-safe fallback using execCommand)
+        function copyToClipboard(text, label) {
+            const tempInput = document.createElement('textarea');
+            tempInput.value = text;
+            tempInput.style.position = 'fixed';
+            tempInput.style.opacity = '0';
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            try {
+                document.execCommand('copy');
+                showToast(`${label} Copied`, `${text} copied to clipboard`, 'fa-clipboard-check');
+            } catch (err) {
+                showToast('Copy Notice', text, 'fa-info-circle');
+            }
+            document.body.removeChild(tempInput);
+        }
+
+        // 4. Experience Timeline Filter
+        const expButtons = document.querySelectorAll('.exp-filter-btn');
+        const expItems = document.querySelectorAll('.exp-item');
+
+        expButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Reset active styles
+                expButtons.forEach(b => {
+                    b.classList.remove('bg-cyan-500', 'text-slate-950');
+                    b.classList.add('bg-slate-900', 'text-slate-300', 'border', 'border-slate-800');
+                });
+                btn.classList.remove('bg-slate-900', 'text-slate-300', 'border', 'border-slate-800');
+                btn.classList.add('bg-cyan-500', 'text-slate-950');
+
+                const filter = btn.getAttribute('data-filter');
+                expItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // 5. Expandable Project Technical Specs
+        function toggleSpecs(specsId, btnElement) {
+            const specsDiv = document.getElementById(specsId);
+            const icon = btnElement.querySelector('i');
+            specsDiv.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        // 6. Skills Matrix Category Filter
+        const skillTabs = document.querySelectorAll('.skill-tab-btn');
+        const skillCards = document.querySelectorAll('.skill-card');
+
+        skillTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                skillTabs.forEach(t => {
+                    t.classList.remove('bg-cyan-500', 'text-slate-950');
+                    t.classList.add('bg-slate-900', 'text-slate-300', 'border', 'border-slate-800');
+                });
+                tab.classList.remove('bg-slate-900', 'text-slate-300', 'border', 'border-slate-800');
+                tab.classList.add('bg-cyan-500', 'text-slate-950');
+
+                const selectedCat = tab.getAttribute('data-tab');
+                skillCards.forEach(card => {
+                    if (selectedCat === 'all' || card.getAttribute('data-skill-cat') === selectedCat) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // 7. Contact Form Submission
+        const contactForm = document.getElementById('contact-form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            showToast('Transmission Complete', 'Your message has been queued for Septian Syena Firmansyah.', 'fa-paper-plane');
+            contactForm.reset();
+        });
+
+        // 8. Documentation Gallery Schematics, Local Photo Upload & Lightbox
+        function buildTechnicalSvg(title, index) {
+            const palettes = [
+                { primary: '#22d3ee', secondary: '#10b981', tag: 'SYS_LOG_01' },
+                { primary: '#34d399', secondary: '#fbbf24', tag: 'FIELD_OPS_02' },
+                { primary: '#fbbf24', secondary: '#22d3ee', tag: 'LOOP_VER_03' }
+            ];
+            const p = palettes[index % palettes.length];
+            return `
+                <svg viewBox="0 0 400 225" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <pattern id="grid-${index}" width="20" height="20" patternUnits="userSpaceOnUse">
+                            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="${p.primary}" stroke-opacity="0.12" stroke-width="1"/>
+                        </pattern>
+                    </defs>
+                    <rect width="400" height="225" fill="#070b14"/>
+                    <rect width="400" height="225" fill="url(#grid-${index})"/>
+                    <rect x="16" y="16" width="368" height="193" rx="10" fill="none" stroke="${p.primary}" stroke-opacity="0.3" stroke-width="1.2" stroke-dasharray="6 4"/>
+                    <circle cx="95" cy="105" r="34" fill="none" stroke="${p.primary}" stroke-width="2" stroke-opacity="0.7"/>
+                    <circle cx="95" cy="105" r="22" fill="${p.primary}" fill-opacity="0.1"/>
+                    <path d="M 129 105 L 195 105 L 215 80 L 285 80" fill="none" stroke="${p.secondary}" stroke-width="2"/>
+                    <path d="M 195 105 L 215 130 L 285 130" fill="none" stroke="${p.primary}" stroke-width="2" stroke-dasharray="4 3"/>
+                    <rect x="285" y="66" width="72" height="28" rx="5" fill="#0d1422" stroke="${p.secondary}" stroke-width="1.5"/>
+                    <rect x="285" y="116" width="72" height="28" rx="5" fill="#0d1422" stroke="${p.primary}" stroke-width="1.5"/>
+                    <text x="95" y="109" text-anchor="middle" fill="${p.primary}" font-family="monospace" font-size="11" font-weight="bold">I/O</text>
+                    <text x="321" y="84" text-anchor="middle" fill="${p.secondary}" font-family="monospace" font-size="10">OK // RUN</text>
+                    <text x="321" y="134" text-anchor="middle" fill="${p.primary}" font-family="monospace" font-size="10">4-20 mA</text>
+                    <text x="28" y="38" fill="${p.primary}" font-family="monospace" font-size="10" opacity="0.85">[${p.tag}] // PHOTO SLOT READY</text>
+                </svg>
+            `;
+        }
+
+        // Initialize SVG technical placeholders on all doc cards unless user already provided a real image src
+        document.querySelectorAll('.doc-card').forEach((card, idx) => {
+            const img = card.querySelector('.doc-img');
+            const placeholder = card.querySelector('.doc-placeholder');
+            const title = card.getAttribute('data-title') || 'Engineering Log';
+            placeholder.innerHTML = buildTechnicalSvg(title, idx);
+
+            if (img && img.getAttribute('src') && img.getAttribute('src').trim() !== '') {
+                img.classList.remove('hidden');
+                placeholder.classList.add('hidden');
+            }
+        });
+
+        // Toggle local photo upload overlay
+        let isPhotoEditMode = false;
+        function togglePhotoEditMode() {
+            isPhotoEditMode = !isPhotoEditMode;
+            const overlays = document.querySelectorAll('.photo-upload-overlay');
+            const label = document.getElementById('photo-edit-label');
+            const btn = document.getElementById('toggle-photo-edit-btn');
+
+            overlays.forEach(ov => {
+                if (isPhotoEditMode) {
+                    ov.classList.remove('hidden');
+                } else {
+                    ov.classList.add('hidden');
+                }
+            });
+
+            if (isPhotoEditMode) {
+                label.textContent = 'Mode Edit Foto: ON';
+                btn.classList.add('bg-amber-500', 'text-slate-950');
+                btn.classList.remove('bg-slate-900', 'text-amber-400');
+                showToast('Mode Edit Foto Aktif', 'Klik slot foto mana saja untuk uji coba upload foto lokal.', 'fa-camera');
+            } else {
+                label.textContent = 'Mode Edit Foto: OFF';
+                btn.classList.remove('bg-amber-500', 'text-slate-950');
+                btn.classList.add('bg-slate-900', 'text-amber-400');
+            }
+        }
+
+        // Preview selected local photo inside card
+        function previewLocalPhoto(event, inputEl) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const card = inputEl.closest('.doc-card');
+                const img = card.querySelector('.doc-img');
+                const placeholder = card.querySelector('.doc-placeholder');
+                img.src = e.target.result;
+                img.classList.remove('hidden');
+                placeholder.classList.add('hidden');
+                showToast('Foto Berhasil Dimuat', `${file.name} ditampilkan pada kartu dokumentasi.`, 'fa-image');
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // Lightbox Modal Controls
+        function openLightbox(cardEl) {
+            const modal = document.getElementById('doc-lightbox');
+            const role = cardEl.getAttribute('data-role');
+            const title = cardEl.getAttribute('data-title');
+            const desc = cardEl.getAttribute('data-desc');
+            const cardImg = cardEl.querySelector('.doc-img');
+            const cardPlaceholder = cardEl.querySelector('.doc-placeholder');
+
+            const lbImg = document.getElementById('lightbox-img');
+            const lbPlaceholder = document.getElementById('lightbox-placeholder');
+
+            document.getElementById('lightbox-role').textContent = role;
+            document.getElementById('lightbox-title').textContent = title;
+            document.getElementById('lightbox-desc').textContent = desc;
+
+            if (cardImg && !cardImg.classList.contains('hidden') && cardImg.src) {
+                lbImg.src = cardImg.src;
+                lbImg.classList.remove('hidden');
+                lbPlaceholder.classList.add('hidden');
+            } else {
+                lbImg.classList.add('hidden');
+                lbPlaceholder.classList.remove('hidden');
+                lbPlaceholder.innerHTML = cardPlaceholder.innerHTML;
+            }
+
+            modal.classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('doc-lightbox').classList.add('hidden');
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>
