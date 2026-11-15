@@ -1418,37 +1418,44 @@
                     </div>
 
                     <div class="space-y-3.5">
-                        <!-- Email Copy Card -->
-                        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 flex items-center justify-between gap-4">
-                            <div class="flex items-center space-x-3.5 min-w-0">
-                                <div class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shrink-0">
-                                    <i class="fa-regular fa-envelope"></i>
-                                </div>
-                                <div class="truncate">
-                                    <span class="block text-[11px] font-mono text-slate-400">EMAIL ADDRESS</span>
-                                    <a href="mailto:septiansyena789@gmail.com" class="text-sm font-mono font-semibold text-white hover:text-cyan-400 truncate block">septiansyena789@gmail.com</a>
-                                </div>
-                            </div>
-                            <button onclick="copyToClipboard('septiansyena789@gmail.com', 'Email Address')" class="px-3.5 py-2 rounded-lg bg-slate-950 border border-slate-700 hover:border-cyan-400 text-xs font-mono text-cyan-400 shrink-0 transition-colors">
-                                <i class="fa-regular fa-copy mr-1"></i> Copy
-                            </button>
-                        </div>
+                        <!-- Bagian Kartu Kontak (Email & WhatsApp dengan Direct Link + Tombol Copy) -->
+<div class="space-y-4">
+    
+    <!-- 1. KARTU EMAIL -->
+    <div class="bg-obsidian border border-slate-800 rounded-xl p-4 flex items-center justify-between group hover:border-cyan-500/50 transition-all">
+        <a href="mailto:septiansyena789@gmail.com" class="flex items-center space-x-4 flex-grow cursor-pointer">
+            <div class="w-10 h-10 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div>
+                <div class="text-xs font-mono text-slate-400">EMAIL ADDRESS</div>
+                <div class="text-sm font-mono text-white group-hover:text-cyan-400 transition-colors">septiansyena789@gmail.com</div>
+            </div>
+        </a>
+        <button onclick="copyToClipboard('septiansyena789@gmail.com')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-mono text-slate-300 flex items-center space-x-1.5 transition-colors">
+            <i class="fa-regular fa-copy"></i>
+            <span>Copy</span>
+        </button>
+    </div>
 
-                        <!-- Phone Copy Card -->
-                        <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 flex items-center justify-between gap-4">
-                            <div class="flex items-center space-x-3.5 min-w-0">
-                                <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 shrink-0">
-                                    <i class="fa-solid fa-phone"></i>
-                                </div>
-                                <div class="truncate">
-                                    <span class="block text-[11px] font-mono text-slate-400">PHONE / WHATSAPP</span>
-                                    <span class="text-sm font-mono font-semibold text-white block">(+62) 858-4378-7499</span>
-                                </div>
-                            </div>
-                            <button onclick="copyToClipboard('+62 858-4378-7499', 'Phone Number')" class="px-3.5 py-2 rounded-lg bg-slate-950 border border-slate-700 hover:border-emerald-400 text-xs font-mono text-emerald-400 shrink-0 transition-colors">
-                                <i class="fa-regular fa-copy mr-1"></i> Copy
-                            </button>
-                        </div>
+    <!-- 2. KARTU WHATSAPP -->
+    <div class="bg-obsidian border border-slate-800 rounded-xl p-4 flex items-center justify-between group hover:border-emerald-500/50 transition-all">
+        <a href="https://wa.me/6285843787499" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-4 flex-grow cursor-pointer">
+            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                <i class="fa-solid fa-phone"></i>
+            </div>
+            <div>
+                <div class="text-xs font-mono text-slate-400">PHONE / WHATSAPP</div>
+                <div class="text-sm font-mono text-white group-hover:text-emerald-400 transition-colors">0858-4378-7499</div>
+            </div>
+        </a>
+        <button onclick="copyToClipboard('085843787499')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-mono text-slate-300 flex items-center space-x-1.5 transition-colors">
+            <i class="fa-regular fa-copy"></i>
+            <span>Copy</span>
+        </button>
+    </div>
+
+</div>
 
                         <!-- LinkedIn Link Card -->
                         <a href="https://www.linkedin.com/in/septiansyenafirmansyah" target="_blank" rel="noopener noreferrer" class="bg-slate-900 border border-slate-800 hover:border-cyan-500/50 rounded-xl p-4 flex items-center justify-between gap-4 transition-colors group">
