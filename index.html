@@ -121,25 +121,30 @@
 </head>
 <body class="bg-obsidian text-slate-100 antialiased selection:bg-cyan-500 selection:text-slate-950">
 
-    <!-- Pertahankan pembungkus luar (border box), ganti isinya dengan foto log 1 -->
-<div class="bg-obsidian border border-slate-800 rounded-2xl p-6 shadow-2xl relative overflow-hidden group">
-    <!-- Header ala Terminal (Opsional, bisa dibiarkan atau dihapus) -->
-    <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-800/80">
+    <!-- Panel SYS_DIAGNOSTICS.EXE dengan foto log 1 di dalam dan menyisakan IDN // JKT-MJK di bawah -->
+<div class="bg-obsidian border border-slate-800 rounded-2xl p-6 shadow-2xl relative overflow-hidden">
+    
+    <!-- Header Terminal -->
+    <div class="flex items-center justify-between mb-4 pb-4 border-b border-slate-800/80">
         <div class="flex items-center space-x-2">
             <span class="w-3 h-3 rounded-full bg-red-500 inline-block"></span>
             <span class="w-3 h-3 rounded-full bg-yellow-500 inline-block"></span>
             <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block"></span>
-            <span class="text-xs font-mono text-slate-400 ml-2">LOG_PROFILE_VIEW.JPG</span>
+            <span class="text-xs font-mono text-slate-400 ml-2">SYS_DIAGNOSTICS.EXE</span>
         </div>
-        <span class="text-xs font-mono text-emerald-400 px-2.5 py-1 rounded bg-emerald-500/10 border border-emerald-500/20">ACTIVE</span>
+        <span class="text-xs font-mono text-emerald-400 px-2.5 py-1 rounded bg-emerald-500/10 border border-emerald-500/20">RUN_MODE</span>
     </div>
 
-    <!-- Wadah Foto log 1 dengan border bawaan yang tetap dipertahankan -->
-    <div class="relative rounded-xl overflow-hidden aspect-[4/5] bg-slate-900 flex items-center justify-center">
-        <!-- Pastikan nama file foto Anda sesuai, contoh: images/log 1.jpg -->
-        <img src="images/log 1.jpg" alt="Septian Syena Firmansyah" class="w-full h-full object-cover rounded-xl transition duration-500 group-hover:scale-105">
+    <!-- Wadah Foto log 1 -->
+    <div class="relative rounded-xl overflow-hidden aspect-[4/5] bg-slate-900 flex items-center justify-center border border-slate-800 mb-4">
+        <img src="images/log 1.jpg" alt="Septian Syena Firmansyah" class="w-full h-full object-cover rounded-xl">
     </div>
-</div>
+
+    <!-- Bagian Bawah: Hanya Menyisakan IDN // JKT-MJK -->
+    <div class="flex items-center justify-end pt-2">
+        <span class="text-xs font-mono text-cyan-400 tracking-wider">IDN // JKT-MJK</span>
+    </div>
+
 </div>
 
     <!-- Navigation Bar -->
