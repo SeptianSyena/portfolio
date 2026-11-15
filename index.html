@@ -78,23 +78,31 @@
             box-shadow: 0 0 30px rgba(245, 158, 11, 0.12);
         }
         /* Light mode styles */
-html.light-mode {
-    background-color: #f8fafc !important;
-    color: #0f172a !important;
-}
-html.light-mode body {
-    background-color: #f8fafc !important;
-    color: #1e293b !important;
-}
-html.light-mode .bg-obsidian {
-    background-color: #ffffff !important;
-}
-html.light-mode .bg-slate-950 {
-    background-color: #f1f5f9 !important;
-}
-html.light-mode .bg-slate-900 {
-    background-color: #e2e8f0 !important;
-}
+        html.light-mode {
+            background-color: #ffffff !important;
+            color: #000000 !important;
+        }
+        html.light-mode body {
+            background-color: #ffffff !important;
+            color: #000000 !important;
+        }
+        html.light-mode .bg-obsidian,
+        html.light-mode .bg-slate-950,
+        html.light-mode .bg-slate-900 {
+            background-color: #f8fafc !important;
+            color: #000000 !important;
+        }
+        html.light-mode h1, 
+        html.light-mode h2, 
+        html.light-mode h3, 
+        html.light-mode h4, 
+        html.light-mode span, 
+        html.light-mode p, 
+        html.light-mode a, 
+        html.light-mode li,
+        html.light-mode div {
+            color: #000000 !important;
+        }
 
 
 
