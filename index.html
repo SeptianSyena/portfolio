@@ -233,16 +233,22 @@
 
                     <!-- Quick Contact Chips -->
                     <div class="flex flex-wrap gap-2.5 pt-1 text-xs font-mono">
-                        <button onclick="copyToClipboard('septiansyena789@gmail.com', 'Email')" class="inline-flex items-center space-x-2 px-3 py-2 rounded-lg bg-slate-900 border border-slate-800 hover:border-cyan-500/50 text-slate-300 hover:text-cyan-400 transition-colors">
-                            <i class="fa-regular fa-envelope text-cyan-400"></i>
-                            <span>septiansyena789@gmail.com</span>
-                            <i class="fa-regular fa-copy text-slate-500"></i>
-                        </button>
-                        <button onclick="copyToClipboard('+62 858-4378-7499', 'Phone Number')" class="inline-flex items-center space-x-2 px-3 py-2 rounded-lg bg-slate-900 border border-slate-800 hover:border-emerald-500/50 text-slate-300 hover:text-emerald-400 transition-colors">
-                            <i class="fa-solid fa-phone text-emerald-400"></i>
-                            <span>(+62) 858-4378-7499</span>
-                            <i class="fa-regular fa-copy text-slate-500"></i>
-                        </button>
+                        <!-- Pill Badge Email & WhatsApp Direct Link -->
+<div class="flex flex-wrap gap-3">
+    <!-- 1. Badge Email (Direct mailto) -->
+    <a href="mailto:septiansyena789@gmail.com" class="inline-flex items-center space-x-2.5 px-3.5 py-2 rounded-lg bg-slate-900/90 border border-slate-800 hover:border-cyan-500/50 text-slate-300 hover:text-cyan-400 transition-all cursor-pointer">
+        <i class="fa-regular fa-envelope text-cyan-400 text-xs"></i>
+        <span class="text-xs font-mono">septiansyena789@gmail.com</span>
+        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500"></i>
+    </a>
+
+    <!-- 2. Badge WhatsApp (Direct wa.me) -->
+    <a href="https://wa.me/6285843787499" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2.5 px-3.5 py-2 rounded-lg bg-slate-900/90 border border-slate-800 hover:border-emerald-500/50 text-slate-300 hover:text-emerald-400 transition-all cursor-pointer">
+        <i class="fa-solid fa-phone text-emerald-400 text-xs"></i>
+        <span class="text-xs font-mono">(+62) 858-4378-7499</span>
+        <i class="fa-solid fa-arrow-up-right-from-square text-[10px] text-slate-500"></i>
+    </a>
+</div>
                         <a href="https://www.linkedin.com/in/septiansyenafirmansyah" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 px-3 py-2 rounded-lg bg-slate-900 border border-slate-800 hover:border-cyan-500/50 text-slate-300 hover:text-cyan-400 transition-colors">
                             <i class="fa-brands fa-linkedin text-cyan-400"></i>
                             <span>linkedin.com/in/septiansyenafirmansyah</span>
