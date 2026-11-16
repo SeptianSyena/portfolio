@@ -117,6 +117,35 @@
             border: 1px solid #000000 !important;
         }
 
+        @keyframes slowGradientFlow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.animate-text-gradient {
+    background: linear-gradient(
+        270deg,
+        #ffffff,
+        #22d3ee,
+        #34d399,
+        #38bdf8,
+        #22d3ee,
+        #ffffff
+    );
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: slowGradientFlow 8s ease infinite;
+}
+
     </style>
 </head>
 <body class="bg-obsidian text-slate-100 antialiased selection:bg-cyan-500 selection:text-slate-950">
@@ -232,8 +261,9 @@
 </div>
 
                     <div>
-                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-                            Septian Syena <span class="bg-gradient-to-r from-cyan-400 via-emerald-400 to-cyan-300 bg-clip-text text-transparent">Firmansyah</span>
+                        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.1]">
+                            <span class="block animate-text-gradient">Septian Syena</span>
+                            <span class="block animate-text-gradient">Firmansyah</span>
                         </h1>
                         <p class="text-lg sm:text-xl font-mono font-semibold text-amber-400 mt-3 flex items-center flex-wrap gap-2">
                             <span>Asia Systems Engineer at RoviSys Asia Indonesia</span>
