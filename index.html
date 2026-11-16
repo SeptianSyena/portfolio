@@ -159,10 +159,11 @@
 
             <!-- CTA Header Button -->
             <div class="hidden md:flex items-center space-x-3">
-                <button onclick="copyToClipboard('septiansyena789@gmail.com', 'Email Address')" class="px-3.5 py-2 rounded-lg text-xs font-mono text-slate-300 bg-slate-900 border border-slate-700 hover:border-cyan-500/60 hover:text-cyan-400 transition-all flex items-center space-x-2" title="Copy Email">
-                    <i class="fa-regular fa-copy text-cyan-400"></i>
-                    <span>septiansyena789@gmail.com</span>
-                </button>
+                <!-- Badge Email di Bagian Atas yang Langsung Mengarah ke Email -->
+<a href="mailto:septiansyena789@gmail.com" class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-cyan-500/50 text-slate-300 hover:text-cyan-400 transition-colors cursor-pointer">
+    <i class="fa-regular fa-copy text-xs"></i> <!-- Ikon bisa diganti fa-envelope jika mau ikon amplop -->
+    <span class="text-xs font-mono">septiansyena789@gmail.com</span>
+</a>
                 <a href="#contact" class="px-4 py-2 rounded-lg text-xs font-mono font-bold uppercase tracking-wider text-slate-950 bg-gradient-to-r from-cyan-400 to-emerald-400 hover:from-cyan-300 hover:to-emerald-300 transition-all shadow-lg shadow-cyan-500/20">
                     Connect
                 </a>
@@ -182,9 +183,11 @@
             <a href="#education" class="block text-slate-300 hover:text-cyan-400 py-2 font-medium">Education & Leadership</a>
             <a href="#contact" class="block text-slate-300 hover:text-cyan-400 py-2 font-medium">Contact & Direct Links</a>
             <div class="pt-2 flex flex-col space-y-2">
-                <button onclick="copyToClipboard('septiansyena789@gmail.com', 'Email Address')" class="w-full py-2.5 rounded-lg text-xs font-mono text-cyan-400 bg-slate-950 border border-slate-800">
-                    <i class="fa-regular fa-copy mr-1.5"></i> Copy Email: septiansyena789@gmail.com
-                </button>
+                <!-- Badge Email di Bagian Atas yang Langsung Mengarah ke Email -->
+                   <a href="mailto:septiansyena789@gmail.com" class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-slate-900 border border-slate-800 hover:border-cyan-500/50 text-slate-300 hover:text-cyan-400 transition-colors cursor-pointer">
+                   <i class="fa-regular fa-copy text-xs"></i> <!-- Ikon bisa diganti fa-envelope jika mau ikon amplop -->
+            <span class="text-xs font-mono">septiansyena789@gmail.com</span>
+</a>
             </div>
         </div>
     </header>
@@ -512,12 +515,12 @@
                             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
                                 <div class="doc-card group relative rounded-xl bg-slate-950 border border-slate-800 hover:border-emerald-400/60 overflow-hidden cursor-pointer transition-all"
                                      data-role="Universitas Gadjah Mada — Assistant Lecturer"
-                                     data-title="Pneumatic & Hydraulic Circuit Lab"
+                                     data-title="Last Session Lecturer"
                                      data-desc="Supervising TRIK 2025 students wiring solenoid valves and electro-pneumatic actuator circuits."
                                      onclick="openLightbox(this)">
                                     <div class="aspect-video w-full relative overflow-hidden bg-slate-950">
                                         <!-- GANTI src DENGAN FILE FOTO ANDA (contoh: assets/ugm-1.jpg) -->
-                                        <img src="images/AL1.jpg" alt="Pneumatic Lab" class="doc-img hidden w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <img src="images/AL1.jpg" alt="Last Session Lecturer" class="doc-img hidden w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                                         <div class="doc-placeholder w-full h-full"></div>
                                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80"></div>
                                         <span class="absolute bottom-2 left-2.5 right-2.5 text-[11px] font-mono font-semibold text-white truncate">Pneumatic & Solenoid Lab</span>
@@ -556,12 +559,12 @@
 
                                 <div class="doc-card group relative rounded-xl bg-slate-950 border border-slate-800 hover:border-emerald-400/60 overflow-hidden cursor-pointer transition-all"
                                      data-role="Universitas Gadjah Mada — Assistant Lecturer"
-                                     data-title="Sensor Signal Conditioning Practicum"
+                                     data-title="Final Presentation Project"
                                      data-desc="Hands-on characterization of industrial proximity, pressure, and temperature transducers."
                                      onclick="openLightbox(this)">
                                     <div class="aspect-video w-full relative overflow-hidden bg-slate-950">
                                         <!-- GANTI src DENGAN FILE FOTO ANDA (contoh: assets/ugm-3.jpg) -->
-                                        <img src="images/AL3.jpg" alt="Sensor Practicum" class="doc-img hidden w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <img src="images/AL3.jpg" alt="Final Presentation Project" class="doc-img hidden w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                                         <div class="doc-placeholder w-full h-full"></div>
                                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80"></div>
                                         <span class="absolute bottom-2 left-2.5 right-2.5 text-[11px] font-mono font-semibold text-white truncate">Sensor & Transducer Practicum</span>
@@ -615,12 +618,12 @@
                             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
                                 <div class="doc-card group relative rounded-xl bg-slate-950 border border-slate-800 hover:border-amber-400/60 overflow-hidden cursor-pointer transition-all"
                                      data-role="PT Borneo Alumina Indonesia — Instrument & Automation Intern"
-                                     data-title="Field Calibration (HART / AMS Trex / Fluke)"
-                                     data-desc="Calibrating pressure & temperature transmitters across coal gasification, power, and alumina refinery units."
+                                     data-title="Final Presentation Project"
+                                     data-desc="Presenting the final project for the Instrument & Automation internship at PT Borneo Alumina Indonesia."
                                      onclick="openLightbox(this)">
                                     <div class="aspect-video w-full relative overflow-hidden bg-slate-950">
                                         <!-- GANTI src DENGAN FILE FOTO ANDA (contoh: assets/bai-1.jpg) -->
-                                        <img src="images/BAI1.jpg" alt="Field Calibration" class="doc-img hidden w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <img src="images/BAI1.jpg" alt="Final Presentation Project" class="doc-img hidden w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                                         <div class="doc-placeholder w-full h-full"></div>
                                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80"></div>
                                         <span class="absolute bottom-2 left-2.5 right-2.5 text-[11px] font-mono font-semibold text-white truncate">HART & AMS Trex Calibration</span>
@@ -637,12 +640,12 @@
 
                                 <div class="doc-card group relative rounded-xl bg-slate-950 border border-slate-800 hover:border-amber-400/60 overflow-hidden cursor-pointer transition-all"
                                      data-role="PT Borneo Alumina Indonesia — Instrument & Automation Intern"
-                                     data-title="Schneider Electric FOXBORO DCS & I/O"
+                                     data-title="Control Valve Loop Test"
                                      data-desc="Troubleshooting Foxboro DCS marshalling cabinets and installing field I/O modules."
                                      onclick="openLightbox(this)">
                                     <div class="aspect-video w-full relative overflow-hidden bg-slate-950">
                                         <!-- GANTI src DENGAN FILE FOTO ANDA (contoh: assets/bai-2.jpg) -->
-                                        <img src="images/BAI2.jpg" alt="Foxboro DCS" class="doc-img hidden w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <img src="images/BAI2.jpg" alt="Control Valve Loop Test" class="doc-img hidden w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                                         <div class="doc-placeholder w-full h-full"></div>
                                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80"></div>
                                         <span class="absolute bottom-2 left-2.5 right-2.5 text-[11px] font-mono font-semibold text-white truncate">Foxboro DCS & I/O Cabinet</span>
@@ -659,12 +662,12 @@
 
                                 <div class="doc-card group relative rounded-xl bg-slate-950 border border-slate-800 hover:border-amber-400/60 overflow-hidden cursor-pointer transition-all"
                                      data-role="PT Borneo Alumina Indonesia — Instrument & Automation Intern"
-                                     data-title="Plant Commissioning & Punch List Closure"
-                                     data-desc="Conducting pre-commissioning loop inspections and closing technical punch list items at Mempawah smelter."
+                                     data-title="RTD PT1000 Troubleshooting"
+                                     data-desc="Troubleshooting resistance temperature detectors (RTDs) in the field."
                                      onclick="openLightbox(this)">
                                     <div class="aspect-video w-full relative overflow-hidden bg-slate-950">
                                         <!-- GANTI src DENGAN FILE FOTO ANDA (contoh: assets/bai-3.jpg) -->
-                                        <img src="images/BAI3.jpg" alt="Plant Commissioning" class="doc-img hidden w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <img src="images/BAI3.jpg" alt="RTD PT1000 Troubleshooting" class="doc-img hidden w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                                         <div class="doc-placeholder w-full h-full"></div>
                                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80"></div>
                                         <span class="absolute bottom-2 left-2.5 right-2.5 text-[11px] font-mono font-semibold text-white truncate">Plant Commissioning Punch List</span>
@@ -718,12 +721,12 @@
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                                 <div class="doc-card group relative rounded-xl bg-slate-950 border border-slate-800 hover:border-amber-400/60 overflow-hidden cursor-pointer transition-all"
                                      data-role="PT Indonesia Morowali Industrial Park (IMIP) — Electrical Intern"
-                                     data-title="Jetty Conveyor SCADA & Crane Limit Switches"
+                                     data-title="Electrical Wiring"
                                      data-desc="Preventive maintenance and repair of crane safety limit switches and bulk conveyor SCADA telemetry at PT IMIP Jetty."
                                      onclick="openLightbox(this)">
                                     <div class="aspect-video w-full relative overflow-hidden bg-slate-950">
                                         <!-- GANTI src DENGAN FILE FOTO ANDA (contoh: assets/imip-1.jpg) -->
-                                        <img src="images/IMIP1.jpg" alt="Jetty Conveyor SCADA" class="doc-img hidden w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <img src="images/IMIP1.jpg" alt="Electrical Wiring" class="doc-img hidden w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                                         <div class="doc-placeholder w-full h-full"></div>
                                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80"></div>
                                         <span class="absolute bottom-2 left-2.5 right-2.5 text-[11px] font-mono font-semibold text-white truncate">Jetty Crane & Conveyor SCADA</span>
@@ -740,12 +743,12 @@
 
                                 <div class="doc-card group relative rounded-xl bg-slate-950 border border-slate-800 hover:border-amber-400/60 overflow-hidden cursor-pointer transition-all"
                                      data-role="PT Indonesia Morowali Industrial Park (IMIP) — Electrical Intern"
-                                     data-title="PLC, SCADA & DCS System Upgrades"
+                                     data-title="Electrical Division"
                                      data-desc="Upgrading industrial control logic, HMI tags, and electrical panel diagnostics across plant facilities."
                                      onclick="openLightbox(this)">
                                     <div class="aspect-video w-full relative overflow-hidden bg-slate-950">
                                         <!-- GANTI src DENGAN FILE FOTO ANDA (contoh: assets/imip-2.jpg) -->
-                                        <img src="images/IMIP2.jpg" alt="PLC SCADA Upgrade" class="doc-img hidden w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                                        <img src="images/IMIP2.jpg" alt="Electrical Division" class="doc-img hidden w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                                         <div class="doc-placeholder w-full h-full"></div>
                                         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80"></div>
                                         <span class="absolute bottom-2 left-2.5 right-2.5 text-[11px] font-mono font-semibold text-white truncate">PLC / SCADA / DCS Upgrade</span>
@@ -1421,6 +1424,9 @@
                         <!-- Bagian Kartu Kontak (Email & WhatsApp dengan Direct Link + Tombol Copy) -->
 <div class="space-y-4">
     
+    <!-- Bagian Kartu Kontak (Email & WhatsApp dengan Direct Link + Tombol Open) -->
+<div class="space-y-4">
+    
     <!-- 1. KARTU EMAIL -->
     <div class="bg-obsidian border border-slate-800 rounded-xl p-4 flex items-center justify-between group hover:border-cyan-500/50 transition-all">
         <a href="mailto:septiansyena789@gmail.com" class="flex items-center space-x-4 flex-grow cursor-pointer">
@@ -1432,10 +1438,10 @@
                 <div class="text-sm font-mono text-white group-hover:text-cyan-400 transition-colors">septiansyena789@gmail.com</div>
             </div>
         </a>
-        <button onclick="copyToClipboard('septiansyena789@gmail.com')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-mono text-slate-300 flex items-center space-x-1.5 transition-colors">
-            <i class="fa-regular fa-copy"></i>
-            <span>Copy</span>
-        </button>
+        <a href="mailto:septiansyena789@gmail.com" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-mono text-slate-300 flex items-center space-x-1.5 transition-colors">
+            <span>Open</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+        </a>
     </div>
 
     <!-- 2. KARTU WHATSAPP -->
@@ -1449,11 +1455,13 @@
                 <div class="text-sm font-mono text-white group-hover:text-emerald-400 transition-colors">0858-4378-7499</div>
             </div>
         </a>
-        <button onclick="copyToClipboard('085843787499')" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-mono text-slate-300 flex items-center space-x-1.5 transition-colors">
-            <i class="fa-regular fa-copy"></i>
-            <span>Copy</span>
-        </button>
+        <a href="https://wa.me/6285843787499" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-xs font-mono text-slate-300 flex items-center space-x-1.5 transition-colors">
+            <span>Open</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+        </a>
     </div>
+
+</div>
 
 </div>
 
